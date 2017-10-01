@@ -1,0 +1,7 @@
+Process step;Measure;Value
+Picking;Duration;9
+Picking;Round trips;1
+Loading;Duration;13
+Loading;Hazards;1
+Shipping;Fuel;4.4
+Unloading;Duration;ERROR
