@@ -1,16 +1,16 @@
 package com.papyrus.statistics;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 
 final class Collector {
-    double value;
+    final List<Double> values = new ArrayList<Double>();
 
     void add(final String step, final String measure, final double value) {
-        this.value = value;
+        values.add(value);
     }
 
     List<Double> get(final String step, final String measure) {
-        return Collections.singletonList(value);
+        return values;
     }
 }
