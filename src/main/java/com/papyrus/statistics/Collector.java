@@ -10,11 +10,7 @@ final class Collector {
 
     void add(final String step, final String measure, final double value) {
         final Measurement measurement = new Measurement(step, measure);
-        List<Double> values = measurements.get(measurement);
-        if (values == null) {
-            values = new ArrayList<>();
-            measurements.put(measurement, values);
-        }
+        final List<Double> values = measurements.computeIfAbsent(measurement, k -> new ArrayList<>());
         values.add(value);
     }
 
