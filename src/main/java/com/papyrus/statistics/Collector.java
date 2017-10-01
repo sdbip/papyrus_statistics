@@ -8,14 +8,12 @@ import java.util.Map;
 final class Collector {
     private final Map<Measurement, List<Double>> measurements = new HashMap<>();
 
-    void add(final String step, final String measure, final double value) {
-        final Measurement measurement = new Measurement(step, measure);
+    void add(Measurement measurement, double value) {
         final List<Double> values = measurements.computeIfAbsent(measurement, k -> new ArrayList<>());
         values.add(value);
     }
 
-    List<Double> get(final String step, final String measure) {
-        final Measurement measurement = new Measurement(step, measure);
+    List<Double> getValues(Measurement measurement) {
         return measurements.get(measurement);
     }
 }
