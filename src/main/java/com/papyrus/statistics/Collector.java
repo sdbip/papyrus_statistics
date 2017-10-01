@@ -1,16 +1,48 @@
 package com.papyrus.statistics;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 final class Collector {
-    final List<Double> values = new ArrayList<Double>();
+    private final Map<Measurement, List<Double>> measurements = new HashMap<Measurement, List<Double>>();
 
     void add(final String step, final String measure, final double value) {
+        final Measurement measurement = new Measurement(step, measure);
+        List<Double> values = measurements.get(measurement);
+        if (values == null) {
+            values = new ArrayList<Double>();
+            measurements.put(measurement, values);
+        }
         values.add(value);
     }
 
     List<Double> get(final String step, final String measure) {
-        return values;
+        final Measurement measurement = new Measurement(step, measure);
+        return measurements.get(measurement);
+    }
+
+    final static class Measurement {
+        final String step;
+        final String measure;
+
+        Measurement(String step, String measure) {
+            this.step = step;
+            this.measure = measure;
+        }
+
+        @Override
+        public boolean equals(Object obj) {
+            if (!(obj instanceof Measurement)) return false;
+
+            final Measurement other = (Measurement) obj;
+            return other.step.equals(step) && other.measure.equals(measure);
+        }
+
+        @Override
+        public int hashCode() {
+            return step.hashCode() * 2^16 + measure.hashCode();
+        }
     }
 }

@@ -26,4 +26,15 @@ public final class CollectionTest {
 
         assertEquals(Arrays.asList(9.0, 11.0), collector.get("Picking", "Duration"));
     }
+
+    @Test
+    public void onlyAddsValuesWithSameStepAndMeasure() {
+        final Collector collector = new Collector();
+
+        collector.add("Picking", "Duration", 9.0);
+        collector.add("Other", "Duration", 11.0);
+        collector.add("Picking", "Other", 11.0);
+
+        assertEquals(Collections.singletonList(9.0), collector.get("Picking", "Duration"));
+    }
 }
