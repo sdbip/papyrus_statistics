@@ -1,0 +1,49 @@
+- Read sample.csv
+- Get filename (path) from command-line
+- Read each line in the input
+- Calculate the output data
+- Write output data to a file
+
+---
+
+Pseudokod:
+
+static void main(String[] args) {
+    inputStream = new FileInputStream(args[0])
+    source = new StreamSource(inputStream)
+    collectedData = new Collector(source).collect()
+
+    calculator = new Calculator(target)
+    calculatedData = calculator.calculate(collectedData)
+
+    outputStream = new FileOutputStream(args[1])
+    target = new StreamTarget(outputStream)
+    formatter = new Formatter(outputStream)
+    formatter.write(calculatedData)
+}
+
+class StreamSource {
+    CollectedData collect() {
+        data = new CollectedData()
+        while(stream.canRead()) {
+            measurement = parse(stream.readLine())
+            if (isError(measurement))
+                data.errors[measurement]++
+            else
+                data.measurements[measurement].add(valueOf(measurement))
+        }
+        return data
+    }
+}
+
+class Calculator {
+    CalculatedData calculate(CollectedData collected) {
+        data = new CalculatedData()
+        for (measurement in collected.all()) {
+            data[measurement] = {
+                errors: collected.errors[measurement]
+                average: average(collected.measurements[measurement])
+            }
+        }
+    }
+}
