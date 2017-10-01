@@ -6,13 +6,13 @@ import java.util.List;
 import java.util.Map;
 
 final class Collector {
-    private final Map<Measurement, List<Double>> measurements = new HashMap<Measurement, List<Double>>();
+    private final Map<Measurement, List<Double>> measurements = new HashMap<>();
 
     void add(final String step, final String measure, final double value) {
         final Measurement measurement = new Measurement(step, measure);
         List<Double> values = measurements.get(measurement);
         if (values == null) {
-            values = new ArrayList<Double>();
+            values = new ArrayList<>();
             measurements.put(measurement, values);
         }
         values.add(value);
