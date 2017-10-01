@@ -8,7 +8,7 @@ import java.util.Collections;
 import static org.junit.Assert.assertEquals;
 
 public final class CollectionTest {
-    final Measurement defaultMeasurement = new Measurement("Picking", "Duration");
+    private final Measurement defaultMeasurement = new Measurement("Picking", "Duration");
 
     @Test
     public void collectsSingleValue() {
