@@ -3,10 +3,10 @@ package com.papyrus.statistics;
 import java.util.Collections;
 import java.util.List;
 
-class Collector {
+final class Collector {
     double value;
 
-    void add(final String step, final String measure, double value) {
+    void add(final String step, final String measure, final double value) {
         this.value = value;
     }
 

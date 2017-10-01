@@ -6,7 +6,7 @@ import java.util.Collections;
 
 import static org.junit.Assert.assertEquals;
 
-public class CollectionTest {
+public final class CollectionTest {
     @Test
     public void collectsSingleValue() {
         final Collector collector = new Collector();
