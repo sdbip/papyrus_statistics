@@ -33,7 +33,7 @@ public class CalculationTest {
 
         final CalculatedData calculatedData = calculator.calculate(collectedData);
 
-        final int errors = calculatedData.errors.get(new Measurement("Picking", "Duration"));
-        assertEquals(3, errors);
+        final CalculatedEntry entry = calculatedData.entries.get("Picking");
+        assertEquals(3, entry.errors);
     }
 }

@@ -2,8 +2,10 @@ package com.papyrus.statistics;
 
 class CalculatedEntry {
     final double average;
+    final int errors;
 
-    CalculatedEntry(double average) {
+    CalculatedEntry(final double average, final int errors) {
         this.average = average;
+        this.errors = errors;
     }
 }
