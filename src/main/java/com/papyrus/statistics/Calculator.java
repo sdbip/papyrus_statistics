@@ -14,9 +14,13 @@ final class Calculator {
     }
 
     private double average(List<Double> values) {
+        return sum(values) / values.size();
+    }
+
+    private double sum(Iterable<Double> values) {
         double total = 0;
         for (final double value : values)
             total += value;
-        return total / values.size();
+        return total;
     }
 }
