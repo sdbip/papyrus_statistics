@@ -8,7 +8,7 @@ import java.util.Collections;
 import static org.junit.Assert.assertEquals;
 
 public final class ErrorCountingTest {
-    private final Measurement defaultMeasurement = new Measurement(new Step("Picking"), new Measure("Duration"));
+    private final Measurement defaultMeasurement = new Measurement(TestSteps.picking, TestMeasures.duration);
     private final TestSource testSource = new TestSource();
     private final Collector collector = new Collector(testSource);
 
@@ -36,8 +36,8 @@ public final class ErrorCountingTest {
     public void onlyAddsErrorsWithSameStepAndMeasure() {
         testSource.entries = Arrays.asList(
                 CollectedEntry.error(defaultMeasurement),
-                CollectedEntry.error(new Measurement(new Step("Other"), defaultMeasurement.measure)),
-                CollectedEntry.error(new Measurement(defaultMeasurement.step, new Measure("Other"))));
+                CollectedEntry.error(new Measurement(TestSteps.other, defaultMeasurement.measure)),
+                CollectedEntry.error(new Measurement(defaultMeasurement.step, TestMeasures.other)));
 
         collector.collect();
 
