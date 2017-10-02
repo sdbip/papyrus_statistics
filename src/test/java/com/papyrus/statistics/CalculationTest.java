@@ -19,8 +19,8 @@ public class CalculationTest {
 
         final CalculatedData calculatedData = calculator.calculate(collectedData);
 
-        double average = calculatedData.averages.get(new Measurement("Picking", "Duration"));
-        assertEquals(10.0, average, 0.01);
+        final CalculatedEntry entry = calculatedData.entries.get("Picking");
+        assertEquals(10.0, entry.average, 0.01);
     }
 
     @Test
