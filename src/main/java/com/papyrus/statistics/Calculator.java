@@ -26,7 +26,7 @@ final class Calculator {
     private void addEntry(
             final Measurement measurement,
             final CalculatedEntry entry,
-            final Map<String, Map<String, CalculatedEntry>> target) {
+            final Map<Step, Map<String, CalculatedEntry>> target) {
         final Map<String, CalculatedEntry> entriesByMeasure =
                 target.computeIfAbsent(measurement.step, k -> new HashMap<>());
         entriesByMeasure.put(measurement.measure, entry);
