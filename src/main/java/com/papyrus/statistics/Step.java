@@ -1,7 +1,7 @@
 package com.papyrus.statistics;
 
 final class Step {
-    final String name;
+    private final String name;
 
     Step(String name) {
         this.name = name;
