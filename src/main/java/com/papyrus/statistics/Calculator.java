@@ -12,8 +12,10 @@ final class Calculator {
         }
 
         for (final Measurement measurement : collectedData.errors.keySet()) {
+            final List<Double> values = collectedData.measurements.get(measurement);
+            final double average = values == null ? 0 : average(values);
             final int errors = collectedData.errors.get(measurement);
-            calculatedData.entries.put(measurement.step, new CalculatedEntry(0, errors));
+            calculatedData.entries.put(measurement.step, new CalculatedEntry(average, errors));
         }
 
         return calculatedData;
