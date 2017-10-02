@@ -22,4 +22,18 @@ public class CalculationTest {
         double average = calculatedData.averages.get(new Measurement("Picking", "Duration"));
         assertEquals(10.0, average, 0.01);
     }
+
+    @Test
+    public void remembersErrors() {
+        final CollectedData collectedData = new CollectedData();
+        collectedData.errors.put(
+                new Measurement("Picking", "Duration"),
+                3
+        );
+
+        final CalculatedData calculatedData = calculator.calculate(collectedData);
+
+        final int errors = calculatedData.errors.get(new Measurement("Picking", "Duration"));
+        assertEquals(3, errors);
+    }
 }

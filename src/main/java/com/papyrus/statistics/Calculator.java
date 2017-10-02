@@ -10,6 +10,12 @@ final class Calculator {
             final double average = average(values);
             calculatedData.averages.put(measurement, average);
         }
+
+        for (final Measurement measurement : collectedData.errors.keySet()) {
+            final int errors = collectedData.errors.get(measurement);
+            calculatedData.errors.put(measurement, errors);
+        }
+
         return calculatedData;
     }
 
