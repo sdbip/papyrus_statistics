@@ -5,8 +5,24 @@ import java.util.List;
 
 final class Collector {
     private final CollectedData collectedData = new CollectedData();
+    private final Source source;
 
-    void add(Measurement measurement, double value) {
+    Collector(Source source) {
+        this.source = source;
+    }
+
+    CollectedData collect() {
+        for (final Entry entry : source.entries()) {
+            if (entry.isError)
+                reportError(entry.measurement);
+            else
+                add(entry.measurement, entry.value);
+        }
+
+        return collectedData;
+    }
+
+    private void add(Measurement measurement, double value) {
         final List<Double> values = collectedData.measurements.computeIfAbsent(measurement, k -> new ArrayList<>());
         values.add(value);
     }
@@ -15,7 +31,7 @@ final class Collector {
         return collectedData.measurements.get(measurement);
     }
 
-    void reportError(Measurement measurement) {
+    private void reportError(Measurement measurement) {
         final int before = errorCount(measurement);
         collectedData.errors.put(measurement, before + 1);
     }
