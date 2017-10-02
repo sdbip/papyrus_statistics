@@ -1,5 +1,6 @@
 package com.papyrus.statistics;
 
+import java.util.Collections;
 import java.util.List;
 
 final class Calculator {
@@ -7,12 +8,12 @@ final class Calculator {
         final CalculatedData calculatedData = new CalculatedData();
         for (final Measurement measurement : collectedData.measurements.keySet()) {
             final CalculatedEntry entry = calculateEntry(collectedData, measurement);
-            calculatedData.entries.put(measurement.step, entry);
+            calculatedData.entries.put(measurement.step, Collections.singletonMap(measurement.measure, entry));
         }
 
         for (final Measurement measurement : collectedData.errors.keySet()) {
             final CalculatedEntry entry = calculateEntry(collectedData, measurement);
-            calculatedData.entries.put(measurement.step, entry);
+            calculatedData.entries.put(measurement.step, Collections.singletonMap(measurement.measure, entry));
         }
 
         return calculatedData;

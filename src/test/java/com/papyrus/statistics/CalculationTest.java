@@ -3,6 +3,8 @@ package com.papyrus.statistics;
 import org.junit.Test;
 
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
 
@@ -19,7 +21,7 @@ public class CalculationTest {
 
         final CalculatedData calculatedData = calculator.calculate(collectedData);
 
-        final CalculatedEntry entry = calculatedData.entries.get("Picking");
+        final CalculatedEntry entry = calculatedData.entries.get("Picking").get("Duration");
         assertEquals(10.0, entry.average, 0.01);
     }
 
@@ -33,7 +35,7 @@ public class CalculationTest {
 
         final CalculatedData calculatedData = calculator.calculate(collectedData);
 
-        final CalculatedEntry entry = calculatedData.entries.get("Picking");
+        final CalculatedEntry entry = calculatedData.entries.get("Picking").get("Duration");
         assertEquals(3, entry.errors);
     }
 
@@ -51,7 +53,7 @@ public class CalculationTest {
 
         final CalculatedData calculatedData = calculator.calculate(collectedData);
 
-        final CalculatedEntry entry = calculatedData.entries.get("Picking");
+        final CalculatedEntry entry = calculatedData.entries.get("Picking").get("Duration");
         assertEquals(10.0, entry.average, 0.01);
         assertEquals(3, entry.errors);
     }
