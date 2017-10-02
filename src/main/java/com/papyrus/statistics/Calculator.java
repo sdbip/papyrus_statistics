@@ -1,22 +1,32 @@
 package com.papyrus.statistics;
 
-import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 final class Calculator {
     CalculatedData calculate(final CollectedData collectedData) {
         final CalculatedData calculatedData = new CalculatedData();
         for (final Measurement measurement : collectedData.measurements.keySet()) {
             final CalculatedEntry entry = calculateEntry(collectedData, measurement);
-            calculatedData.entries.put(measurement.step, Collections.singletonMap(measurement.measure, entry));
+            addEntry(measurement, entry, calculatedData.entries);
         }
 
         for (final Measurement measurement : collectedData.errors.keySet()) {
             final CalculatedEntry entry = calculateEntry(collectedData, measurement);
-            calculatedData.entries.put(measurement.step, Collections.singletonMap(measurement.measure, entry));
+            addEntry(measurement, entry, calculatedData.entries);
         }
 
         return calculatedData;
+    }
+
+    private void addEntry(
+            final Measurement measurement,
+            final CalculatedEntry entry,
+            final Map<String, Map<String, CalculatedEntry>> target) {
+        final Map<String, CalculatedEntry> entriesByMeasure =
+                target.computeIfAbsent(measurement.step, k -> new HashMap<>());
+        entriesByMeasure.put(measurement.measure, entry);
     }
 
     private CalculatedEntry calculateEntry(final CollectedData collectedData, final Measurement measurement) {

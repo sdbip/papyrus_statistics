@@ -7,6 +7,7 @@ import java.util.Collections;
 import java.util.Map;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class CalculationTest {
     private final Calculator calculator = new Calculator();
@@ -56,5 +57,24 @@ public class CalculationTest {
         final CalculatedEntry entry = calculatedData.entries.get("Picking").get("Duration");
         assertEquals(10.0, entry.average, 0.01);
         assertEquals(3, entry.errors);
+    }
+
+    @Test
+    public void collatesMultipleMeasuresForSameStep() {
+        final CollectedData collectedData = new CollectedData();
+        collectedData.measurements.put(
+                new Measurement("Picking", "Duration"),
+                Collections.singletonList(1.0)
+        );
+        collectedData.measurements.put(
+                new Measurement("Picking", "Fuel"),
+                Collections.singletonList(1.0)
+        );
+
+        final CalculatedData calculatedData = calculator.calculate(collectedData);
+
+        final Map<String, CalculatedEntry> entry = calculatedData.entries.get("Picking");
+        assertTrue(entry.containsKey("Fuel"));
+        assertTrue(entry.containsKey("Duration"));
     }
 }
