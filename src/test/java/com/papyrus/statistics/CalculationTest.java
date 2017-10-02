@@ -17,9 +17,9 @@ public class CalculationTest {
                 Arrays.asList(9.0, 11.0)
         );
 
-        calculator.calculate(collectedData);
-    
-        double average = calculator.average(new Measurement("Picking", "Duration"));
+        final CalculatedData calculatedData = calculator.calculate(collectedData);
+
+        double average = calculator.average(new Measurement("Picking", "Duration"), calculatedData);
         assertEquals(10.0, average, 0.01);
     }
 }
