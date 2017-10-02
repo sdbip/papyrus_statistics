@@ -37,11 +37,11 @@ final class Calculator {
         return new CalculatedEntry(average, errors);
     }
 
-    private double average(List<Double> values) {
+    private double average(final List<Double> values) {
         return sum(values) / values.size();
     }
 
-    private double sum(Iterable<Double> values) {
+    private double sum(final Iterable<Double> values) {
         double total = 0;
         for (final double value : values)
             total += value;
