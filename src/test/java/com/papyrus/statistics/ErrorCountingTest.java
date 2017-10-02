@@ -14,7 +14,7 @@ public final class ErrorCountingTest {
 
     @Test
     public void countsSingleError() {
-        testSource.entries = Collections.singletonList(Entry.error(defaultMeasurement));
+        testSource.entries = Collections.singletonList(CollectedEntry.error(defaultMeasurement));
 
         collector.collect();
 
@@ -24,8 +24,8 @@ public final class ErrorCountingTest {
     @Test
     public void countsMultipleErrors() {
         testSource.entries = Arrays.asList(
-                Entry.error(defaultMeasurement),
-                Entry.error(defaultMeasurement));
+                CollectedEntry.error(defaultMeasurement),
+                CollectedEntry.error(defaultMeasurement));
 
         collector.collect();
 
@@ -35,9 +35,9 @@ public final class ErrorCountingTest {
     @Test
     public void onlyAddsErrorsWithSameStepAndMeasure() {
         testSource.entries = Arrays.asList(
-                Entry.error(defaultMeasurement),
-                Entry.error(new Measurement("Other", defaultMeasurement.measure)),
-                Entry.error(new Measurement(defaultMeasurement.step, "Other")));
+                CollectedEntry.error(defaultMeasurement),
+                CollectedEntry.error(new Measurement("Other", defaultMeasurement.measure)),
+                CollectedEntry.error(new Measurement(defaultMeasurement.step, "Other")));
 
         collector.collect();
 

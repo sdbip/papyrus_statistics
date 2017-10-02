@@ -3,10 +3,10 @@ package com.papyrus.statistics;
 import java.util.List;
 
 final class TestSource implements Source {
-    List<Entry> entries;
+    List<CollectedEntry> entries;
 
     @Override
-    public Iterable<Entry> entries() {
+    public Iterable<CollectedEntry> entries() {
         return entries;
     }
 }

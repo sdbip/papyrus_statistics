@@ -12,7 +12,7 @@ final class Collector {
     }
 
     CollectedData collect() {
-        for (final Entry entry : source.entries()) {
+        for (final CollectedEntry entry : source.entries()) {
             if (entry.isError)
                 reportError(entry.measurement);
             else

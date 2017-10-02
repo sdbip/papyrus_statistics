@@ -14,7 +14,7 @@ public final class CollectionTest {
 
     @Test
     public void collectsSingleValue() {
-        testSource.entries = Collections.singletonList(new Entry(defaultMeasurement, 9.0));
+        testSource.entries = Collections.singletonList(new CollectedEntry(defaultMeasurement, 9.0));
 
         collector.collect();
 
@@ -24,8 +24,8 @@ public final class CollectionTest {
     @Test
     public void collectsMultipleValues() {
         testSource.entries = Arrays.asList(
-                new Entry(defaultMeasurement, 9.0),
-                new Entry(defaultMeasurement, 11.0));
+                new CollectedEntry(defaultMeasurement, 9.0),
+                new CollectedEntry(defaultMeasurement, 11.0));
 
         collector.collect();
 
@@ -35,9 +35,9 @@ public final class CollectionTest {
     @Test
     public void onlyAddsValuesWithSameStepAndMeasure() {
         testSource.entries = Arrays.asList(
-                new Entry(defaultMeasurement, 9.0),
-                new Entry(new Measurement("Other", defaultMeasurement.measure), 11.0),
-                new Entry(new Measurement(defaultMeasurement.step, "Other"), 11.0));
+                new CollectedEntry(defaultMeasurement, 9.0),
+                new CollectedEntry(new Measurement("Other", defaultMeasurement.measure), 11.0),
+                new CollectedEntry(new Measurement(defaultMeasurement.step, "Other"), 11.0));
 
         collector.collect();
 
