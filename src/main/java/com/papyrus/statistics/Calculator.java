@@ -13,10 +13,6 @@ final class Calculator {
         return calculatedData;
     }
 
-    double average(final Measurement measurement, final CalculatedData calculatedData) {
-        return calculatedData.averages.get(measurement);
-    }
-
     private double average(List<Double> values) {
         double total = 0;
         for (double value : values) {
