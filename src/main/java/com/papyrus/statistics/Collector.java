@@ -16,13 +16,12 @@ final class Collector {
     }
 
     void reportError(Measurement measurement) {
-        Integer integer = collectedData.errors.get(measurement);
-        if (integer == null) integer = 1;
-        else integer++;
-        collectedData.errors.put(measurement, integer);
+        final int before = errorCount(measurement);
+        collectedData.errors.put(measurement, before + 1);
     }
 
     int errorCount(Measurement measurement) {
-        return collectedData.errors.get(measurement);
+        final Integer storedValue = collectedData.errors.get(measurement);
+        return storedValue == null ? 0 : storedValue;
     }
 }
