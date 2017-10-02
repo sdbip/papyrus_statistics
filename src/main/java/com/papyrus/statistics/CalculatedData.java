@@ -1,9 +1,8 @@
 package com.papyrus.statistics;
 
-final class CalculatedData {
-    final CollectedData collectedData;
+import java.util.HashMap;
+import java.util.Map;
 
-    CalculatedData(CollectedData collectedData) {
-        this.collectedData = collectedData;
-    }
+final class CalculatedData {
+    final Map<Measurement, Double> averages = new HashMap<>();
 }
