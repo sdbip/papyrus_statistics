@@ -15,6 +15,9 @@ final class Calculator {
         for (final Measurement measurement : collectedData.errors.keySet()) {
             final CalculatedEntry entry = calculateEntry(collectedData, measurement);
             addEntry(measurement, entry, calculatedData.entries);
+
+            final Integer errorsBefore = calculatedData.totalErrorsByMeasure.computeIfAbsent(measurement.measure, k -> 0);
+            calculatedData.totalErrorsByMeasure.put(measurement.measure, errorsBefore + entry.errors);
         }
 
         return calculatedData;

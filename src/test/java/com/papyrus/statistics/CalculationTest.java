@@ -77,4 +77,22 @@ public class CalculationTest {
         assertTrue(entry.containsKey("Fuel"));
         assertTrue(entry.containsKey("Duration"));
     }
+
+    @Test
+    public void calculatesTotalNumberOfErrorsPerMeasure() {
+        final CollectedData collectedData = new CollectedData();
+        collectedData.errors.put(
+                new Measurement("Picking", "Duration"),
+                3
+        );
+        collectedData.errors.put(
+                new Measurement("Loading", "Duration"),
+                3
+        );
+
+        final CalculatedData calculatedData = calculator.calculate(collectedData);
+
+        final int errors = calculatedData.totalErrorsByMeasure.get("Duration");
+        assertEquals(6, errors);
+    }
 }
