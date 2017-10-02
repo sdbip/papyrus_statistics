@@ -2,9 +2,9 @@ package com.papyrus.statistics;
 
 final class Measurement {
     final Step step;
-    final String measure;
+    final Measure measure;
 
-    Measurement(Step step, String measure) {
+    Measurement(Step step, Measure measure) {
         this.step = step;
         this.measure = measure;
     }

@@ -16,13 +16,13 @@ public class CalculationTest {
     public void calculatesAverage() {
         final CollectedData collectedData = new CollectedData();
         collectedData.measurements.put(
-                new Measurement(new Step("Picking"), "Duration"),
+                new Measurement(new Step("Picking"), new Measure("Duration")),
                 Arrays.asList(9.0, 11.0)
         );
 
         final CalculatedData calculatedData = calculator.calculate(collectedData);
 
-        final CalculatedEntry entry = calculatedData.entries.get(new Step("Picking")).get("Duration");
+        final CalculatedEntry entry = calculatedData.entries.get(new Step("Picking")).get(new Measure("Duration"));
         assertEquals(10.0, entry.average, 0.01);
     }
 
@@ -30,13 +30,13 @@ public class CalculationTest {
     public void remembersErrors() {
         final CollectedData collectedData = new CollectedData();
         collectedData.errors.put(
-                new Measurement(new Step("Picking"), "Duration"),
+                new Measurement(new Step("Picking"), new Measure("Duration")),
                 3
         );
 
         final CalculatedData calculatedData = calculator.calculate(collectedData);
 
-        final CalculatedEntry entry = calculatedData.entries.get(new Step("Picking")).get("Duration");
+        final CalculatedEntry entry = calculatedData.entries.get(new Step("Picking")).get(new Measure("Duration"));
         assertEquals(3, entry.errors);
     }
 
@@ -44,17 +44,17 @@ public class CalculationTest {
     public void combinesAverageAndErrors() {
         final CollectedData collectedData = new CollectedData();
         collectedData.measurements.put(
-                new Measurement(new Step("Picking"), "Duration"),
+                new Measurement(new Step("Picking"), new Measure("Duration")),
                 Arrays.asList(9.0, 11.0)
         );
         collectedData.errors.put(
-                new Measurement(new Step("Picking"), "Duration"),
+                new Measurement(new Step("Picking"), new Measure("Duration")),
                 3
         );
 
         final CalculatedData calculatedData = calculator.calculate(collectedData);
 
-        final CalculatedEntry entry = calculatedData.entries.get(new Step("Picking")).get("Duration");
+        final CalculatedEntry entry = calculatedData.entries.get(new Step("Picking")).get(new Measure("Duration"));
         assertEquals(10.0, entry.average, 0.01);
         assertEquals(3, entry.errors);
     }
@@ -63,36 +63,36 @@ public class CalculationTest {
     public void collatesMultipleMeasuresForSameStep() {
         final CollectedData collectedData = new CollectedData();
         collectedData.measurements.put(
-                new Measurement(new Step("Picking"), "Duration"),
+                new Measurement(new Step("Picking"), new Measure("Duration")),
                 Collections.singletonList(1.0)
         );
         collectedData.measurements.put(
-                new Measurement(new Step("Picking"), "Fuel"),
+                new Measurement(new Step("Picking"), new Measure("Fuel")),
                 Collections.singletonList(1.0)
         );
 
         final CalculatedData calculatedData = calculator.calculate(collectedData);
 
-        final Map<String, CalculatedEntry> entry = calculatedData.entries.get(new Step("Picking"));
-        assertTrue(entry.containsKey("Fuel"));
-        assertTrue(entry.containsKey("Duration"));
+        final Map<Measure, CalculatedEntry> entry = calculatedData.entries.get(new Step("Picking"));
+        assertTrue(entry.containsKey(new Measure("Fuel")));
+        assertTrue(entry.containsKey(new Measure("Duration")));
     }
 
     @Test
     public void calculatesTotalNumberOfErrorsPerMeasure() {
         final CollectedData collectedData = new CollectedData();
         collectedData.errors.put(
-                new Measurement(new Step("Picking"), "Duration"),
+                new Measurement(new Step("Picking"), new Measure("Duration")),
                 3
         );
         collectedData.errors.put(
-                new Measurement(new Step("Loading"), "Duration"),
+                new Measurement(new Step("Loading"), new Measure("Duration")),
                 3
         );
 
         final CalculatedData calculatedData = calculator.calculate(collectedData);
 
-        final int errors = calculatedData.totalErrorsByMeasure.get("Duration");
+        final int errors = calculatedData.totalErrorsByMeasure.get(new Measure("Duration"));
         assertEquals(6, errors);
     }
 }

@@ -8,7 +8,7 @@ import java.util.Collections;
 import static org.junit.Assert.assertEquals;
 
 public final class CollectionTest {
-    private final Measurement defaultMeasurement = new Measurement(new Step("Picking"), "Duration");
+    private final Measurement defaultMeasurement = new Measurement(new Step("Picking"), new Measure("Duration"));
     private final TestSource testSource = new TestSource();
     private final Collector collector = new Collector(testSource);
 
@@ -37,7 +37,7 @@ public final class CollectionTest {
         testSource.entries = Arrays.asList(
                 new CollectedEntry(defaultMeasurement, 9.0),
                 new CollectedEntry(new Measurement(new Step("Other"), defaultMeasurement.measure), 11.0),
-                new CollectedEntry(new Measurement(defaultMeasurement.step, "Other"), 11.0));
+                new CollectedEntry(new Measurement(defaultMeasurement.step, new Measure("Other")), 11.0));
 
         collector.collect();
 
