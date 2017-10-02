@@ -3,9 +3,9 @@ package com.papyrus.statistics;
 import java.util.List;
 
 final class Calculator {
-    private final CollectedData collectedData;
+    private CollectedData collectedData;
 
-    Calculator(final CollectedData collectedData) {
+    void calculate(final CollectedData collectedData) {
         this.collectedData = collectedData;
     }
 
