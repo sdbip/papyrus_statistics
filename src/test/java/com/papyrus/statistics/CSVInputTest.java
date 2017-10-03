@@ -12,7 +12,7 @@ import static org.junit.Assert.assertFalse;
 
 public class CSVInputTest {
     @Test
-    public void aTest() throws IOException {
+    public void parsesExcelCSV() throws IOException {
         final String csv =
                 "Process Step;Measure;Value\n" +
                 "Picking;Duration;9.0\n";
