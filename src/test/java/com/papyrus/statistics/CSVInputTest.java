@@ -43,6 +43,26 @@ public class CSVInputTest {
         assertTrue(entry.isError);
     }
 
+    @Test
+    public void parsesSampleCSV() throws IOException {
+        final InputStream inputStream = openResource("test_data_java_exercise.csv");
+        final CSVSource source = new CSVSource(inputStream);
+
+        final List<CollectedEntry> entries = getCollectedEntries(source);
+
+        assertEquals(999, entries.size());
+        final CollectedEntry entry = entries.get(0);
+        assertEquals(new Measurement(new Step("Shipping"), new Measure("Stops")), entry.measurement);
+        assertFalse(entry.isError);
+        assertEquals(7.0, entry.value, 0.001);
+    }
+
+    @SuppressWarnings("SameParameterValue")
+    private InputStream openResource(final String name) throws IOException {
+        final URL resource = getClass().getClassLoader().getResource(name);
+        return resource == null ? null : resource.openStream();
+    }
+
     private CSVSource createCSVSource(String csv) throws IOException {
         final ByteArrayInputStream inputStream = new ByteArrayInputStream(csv.getBytes());
         return new CSVSource(inputStream);
