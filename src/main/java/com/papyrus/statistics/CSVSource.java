@@ -30,14 +30,25 @@ class CSVSource implements Source {
             @Override
             public CollectedEntry next() {
                 final CSVRecord record = recordIterator.next();
-                return new CollectedEntry(
-                        new Measurement(
-                                new Step(record.get(0)),
-                                new Measure(record.get(1))
-                        ),
-                        Double.valueOf(record.get(2))
+                final Measurement measurement = new Measurement(
+                        new Step(record.get(0)),
+                        new Measure(record.get(1))
                 );
+                final Double value = parseDouble(record.get(2));
+                if (value == null) {
+                    return CollectedEntry.error(measurement);
+                } else {
+                    return new CollectedEntry(measurement, value);
+                }
             }
         };
+    }
+
+    private Double parseDouble(String string) {
+        try {
+            return Double.parseDouble(string);
+        } catch (NumberFormatException e) {
+            return null;
+        }
     }
 }
