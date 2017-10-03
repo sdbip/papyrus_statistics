@@ -1,0 +1,1000 @@
+Process Step;Measure;Value
+Shipping;Stops;7
+Picking;Round trips;ERROR
+Picking;Round trips;5
+Shipping;Stops;11
+Loading;Duration;24.9
+Shipping;Fuel;14.91
+Shipping;Fuel;14.21
+Loading;Hazards;8.31
+Shipping;Duration;49.4
+Unloading;Duration;10.1
+Shipping;Fuel;6.51
+Unloading;Hazards;7
+Shipping;Fuel;8.31
+Picking;Round trips;5
+Unloading;Hazards;2
+Unloading;Duration;13.1
+Loading;Duration;7.6
+Loading;Hazards;6.5
+Shipping;Stops;9
+Unloading;Duration;15.2
+Unloading;Hazards;3
+Loading;Hazards;21.3
+Loading;Duration;6.5
+Shipping;Stops;11
+Unloading;Hazards;ERROR
+Loading;Hazards;5
+Loading;Duration;21.3
+Shipping;Duration;39.1
+Loading;Hazards;ERROR
+Unloading;Hazards;1
+Unloading;Hazards;5
+Loading;Duration;10.8
+Shipping;Stops;ERROR
+Loading;Hazards;ERROR
+Loading;Duration;5.8
+Picking;Duration;12.5
+Shipping;Fuel;1.34
+Shipping;Stops;12
+Shipping;Stops;ERROR
+Unloading;Duration;1.8
+Loading;Duration;3.7
+Unloading;Duration;17.8
+Unloading;Hazards;7
+Unloading;Hazards;6
+Shipping;Fuel;8.45
+Shipping;Duration;43.2
+Shipping;Fuel;5.31
+Picking;Duration;ERROR
+Unloading;Duration;10.3
+Shipping;Duration;28.6
+Shipping;Stops;3
+Picking;Round trips;ERROR
+Loading;Duration;2.5
+Shipping;Stops;3
+Loading;Hazards;10
+Unloading;Duration;18.1
+Loading;Hazards;3
+Shipping;Duration;55.4
+Shipping;Fuel;2.87
+Shipping;Stops;10
+Loading;Hazards;ERROR
+Unloading;Hazards;3
+Loading;Duration;1.4
+Shipping;Stops;9
+Picking;Round trips;2
+Shipping;Fuel;12.04
+Shipping;Duration;33.7
+Unloading;Hazards;2
+Unloading;Duration;2.6
+Unloading;Hazards;3
+Shipping;Duration;1.4
+Loading;Hazards;ERROR
+Shipping;Stops;5
+Unloading;Duration;3.3
+Picking;Round trips;1
+Picking;Duration;7.1
+Picking;Round trips;ERROR
+Picking;Duration;28.4
+Shipping;Duration;51.9
+Picking;Duration;13.1
+Unloading;Duration;6.7
+Loading;Duration;14.5
+Loading;Duration;10.9
+Shipping;Stops;3
+Loading;Hazards;ERROR
+Shipping;Duration;45.5
+Shipping;Fuel;13.15
+Unloading;Duration;9.1
+Loading;Hazards;12.5
+Shipping;Duration;ERROR
+Shipping;Stops;4
+Shipping;Fuel;12.09
+Shipping;Fuel;13.1
+Loading;Hazards;12.5
+Shipping;Fuel;13.26
+Unloading;Hazards;5
+Picking;Round trips;4
+Loading;Hazards;ERROR
+Shipping;Duration;12.5
+Loading;Hazards;1.02
+Unloading;Duration;18.3
+Picking;Round trips;2
+Loading;Hazards;ERROR
+Loading;Hazards;3
+Shipping;Fuel;1.02
+Shipping;Stops;3
+Loading;Duration;21.5
+Shipping;Stops;ERROR
+Unloading;Hazards;3
+Shipping;Stops;7
+Shipping;Fuel;13.36
+Picking;Round trips;3
+Picking;Duration;31.5
+Unloading;Duration;9.8
+Shipping;Stops;ERROR
+Unloading;Duration;17.9
+Loading;Hazards;11.71
+Unloading;Hazards;7
+Shipping;Duration;13.8
+Loading;Duration;ERROR
+Shipping;Fuel;ERROR
+Shipping;Fuel;11.71
+Picking;Round trips;1
+Unloading;Duration;9.9
+Picking;Round trips;1
+Shipping;Fuel;4.49
+Unloading;Duration;15.1
+Shipping;Duration;26.4
+Shipping;Duration;4.4
+Loading;Hazards;12.1
+Picking;Duration;30.9
+Loading;Duration;5.9
+Shipping;Stops;13
+Shipping;Fuel;ERROR
+Picking;Duration;12.1
+Shipping;Fuel;6.77
+Shipping;Fuel;6.9
+Picking;Duration;1.5
+Shipping;Duration;38.8
+Shipping;Fuel;10.45
+Picking;Round trips;ERROR
+Unloading;Duration;6.9
+Unloading;Duration;3.9
+Picking;Duration;ERROR
+Picking;Round trips;ERROR
+Shipping;Duration;26.6
+Loading;Duration;5.5
+Shipping;Fuel;10.22
+Unloading;Duration;ERROR
+Unloading;Duration;14.8
+Shipping;Fuel;10.22
+Shipping;Fuel;ERROR
+Shipping;Stops;1
+Picking;Round trips;1
+Shipping;Fuel;3.53
+Shipping;Fuel;9.45
+Unloading;Duration;10.4
+Picking;Duration;37.9
+Unloading;Duration;4.2
+Unloading;Hazards;6
+Loading;Hazards;9
+Picking;Round trips;5
+Loading;Duration;12.3
+Picking;Round trips;1
+Unloading;Duration;ERROR
+Shipping;Stops;9
+Shipping;Fuel;11.86
+Shipping;Duration;9
+Unloading;Duration;14.6
+Loading;Duration;22
+Loading;Duration;5.3
+Unloading;Duration;18.3
+Unloading;Duration;ERROR
+Shipping;Stops;6
+Shipping;Fuel;1.76
+Picking;Duration;7.9
+Unloading;Hazards;6
+Shipping;Stops;2
+Shipping;Stops;9
+Picking;Round trips;5
+Loading;Duration;17.7
+Picking;Duration;27.4
+Shipping;Duration;29.4
+Picking;Round trips;3
+Loading;Duration;6.6
+Shipping;Stops;5
+Unloading;Hazards;6
+Picking;Duration;16.8
+Loading;Hazards;3.8
+Unloading;Duration;1.1
+Picking;Round trips;2
+Unloading;Hazards;1
+Unloading;Hazards;ERROR
+Loading;Duration;3.8
+Loading;Hazards;29
+Shipping;Fuel;4.36
+Shipping;Stops;11
+Shipping;Stops;10
+Shipping;Duration;5.9
+Picking;Duration;29
+Shipping;Stops;1
+Picking;Round trips;4
+Unloading;Duration;ERROR
+Shipping;Stops;ERROR
+Loading;Duration;ERROR
+Shipping;Fuel;10.14
+Shipping;Fuel;7.31
+Shipping;Stops;6
+Unloading;Hazards;5
+Unloading;Hazards;3
+Unloading;Hazards;4
+Picking;Round trips;1
+Loading;Duration;15.8
+Shipping;Duration;47.6
+Unloading;Duration;ERROR
+Shipping;Duration;55.7
+Loading;Duration;24.1
+Picking;Duration;18.5
+Shipping;Fuel;9.57
+Picking;Duration;22.6
+Unloading;Hazards;5
+Unloading;Hazards;6
+Unloading;Duration;2.5
+Picking;Duration;15.5
+Unloading;Duration;3
+Shipping;Duration;20.8
+Picking;Round trips;5
+Picking;Round trips;5
+Unloading;Duration;18.6
+Loading;Duration;14.5
+Picking;Round trips;1
+Picking;Duration;11
+Loading;Duration;1.2
+Shipping;Fuel;12.43
+Shipping;Fuel;5.78
+Loading;Hazards;ERROR
+Unloading;Hazards;1
+Picking;Duration;2.9
+Shipping;Stops;3
+Unloading;Duration;8
+Picking;Duration;ERROR
+Unloading;Hazards;4
+Loading;Hazards;5
+Unloading;Hazards;6
+Loading;Hazards;ERROR
+Picking;Round trips;4
+Shipping;Stops;11
+Picking;Round trips;5
+Picking;Round trips;3
+Picking;Round trips;ERROR
+Picking;Round trips;3
+Unloading;Hazards;5
+Shipping;Stops;10
+Picking;Duration;38.4
+Loading;Hazards;12.71
+Unloading;Duration;18
+Shipping;Duration;32.6
+Shipping;Stops;ERROR
+Shipping;Duration;6.1
+Loading;Hazards;12.71
+Unloading;Duration;6.9
+Shipping;Duration;50.6
+Loading;Hazards;5
+Shipping;Fuel;3.23
+Shipping;Fuel;12.71
+Shipping;Stops;6
+Unloading;Duration;16.7
+Shipping;Stops;5
+Shipping;Fuel;13.86
+Shipping;Stops;5
+Loading;Duration;22.3
+Shipping;Duration;14.9
+Picking;Duration;16.2
+Picking;Duration;1.4
+Shipping;Duration;32.7
+Picking;Duration;ERROR
+Picking;Round trips;2
+Shipping;Stops;9
+Unloading;Hazards;5
+Shipping;Duration;23.7
+Shipping;Stops;1
+Shipping;Stops;8
+Picking;Round trips;4
+Unloading;Duration;14.8
+Unloading;Duration;5.2
+Picking;Round trips;2
+Unloading;Duration;6.3
+Loading;Duration;25.3
+Unloading;Hazards;4
+Loading;Duration;9.1
+Picking;Round trips;3
+Shipping;Stops;2
+Shipping;Stops;10
+Shipping;Fuel;2.1
+Picking;Round trips;2
+Picking;Duration;28.7
+Loading;Duration;7.4
+Picking;Round trips;4
+Unloading;Duration;13.8
+Shipping;Fuel;9.17
+Picking;Duration;2.2
+Shipping;Stops;13
+Picking;Round trips;5
+Loading;Duration;6.5
+Shipping;Stops;11
+Picking;Round trips;4
+Loading;Duration;12.4
+Picking;Round trips;1
+Picking;Duration;ERROR
+Shipping;Stops;ERROR
+Shipping;Fuel;2.43
+Shipping;Duration;55.3
+Picking;Duration;26.4
+Unloading;Hazards;2
+Unloading;Duration;3.9
+Picking;Round trips;1
+Shipping;Duration;12.9
+Loading;Duration;9.5
+Shipping;Fuel;12.94
+Unloading;Duration;19.3
+Loading;Hazards;5
+Shipping;Fuel;13.91
+Shipping;Duration;21.2
+Shipping;Fuel;15.16
+Picking;Duration;16.7
+Loading;Hazards;5
+Loading;Duration;8.7
+Unloading;Hazards;5
+Shipping;Stops;6
+Shipping;Fuel;7.09
+Unloading;Hazards;5
+Shipping;Stops;1
+Loading;Duration;4
+Shipping;Duration;30.2
+Loading;Hazards;12.45
+Loading;Hazards;2
+Unloading;Hazards;1
+Loading;Duration;26.7
+Loading;Duration;1.7
+Shipping;Fuel;12.45
+Shipping;Stops;2
+Unloading;Duration;19.3
+Unloading;Duration;3.1
+Picking;Duration;5.1
+Shipping;Duration;3.8
+Picking;Duration;39.1
+Loading;Hazards;54.7
+Unloading;Hazards;2
+Shipping;Stops;3
+Picking;Round trips;1
+Shipping;Fuel;6.87
+Shipping;Duration;54.7
+Shipping;Duration;23.3
+Loading;Hazards;1
+Picking;Duration;26.8
+Shipping;Fuel;3.73
+Unloading;Hazards;2
+Unloading;Hazards;1
+Picking;Round trips;1
+Shipping;Fuel;ERROR
+Unloading;Hazards;1
+Shipping;Fuel;12.37
+Unloading;Duration;13.6
+Shipping;Stops;2
+Shipping;Fuel;ERROR
+Unloading;Duration;10.8
+Unloading;Duration;13.2
+Picking;Round trips;4
+Loading;Duration;7.1
+Picking;Duration;27.5
+Shipping;Duration;ERROR
+Picking;Duration;12.7
+Unloading;Duration;4.3
+Unloading;Hazards;5
+Unloading;Hazards;3
+Shipping;Fuel;9.28
+Loading;Hazards;3.8
+Shipping;Duration;21.2
+Unloading;Hazards;4
+Shipping;Fuel;5.21
+Loading;Duration;16.6
+Shipping;Duration;3.8
+Unloading;Hazards;1
+Unloading;Hazards;7
+Loading;Hazards;ERROR
+Picking;Round trips;1
+Picking;Duration;33.1
+Shipping;Duration;16.7
+Shipping;Fuel;5.33
+Unloading;Duration;13
+Unloading;Hazards;6
+Picking;Duration;ERROR
+Picking;Round trips;ERROR
+Unloading;Duration;14.2
+Loading;Duration;2.6
+Shipping;Fuel;7.89
+Unloading;Duration;8.7
+Unloading;Duration;1.3
+Loading;Hazards;48.2
+Unloading;Hazards;3
+Unloading;Duration;7.5
+Picking;Duration;16.8
+Loading;Duration;6.5
+Loading;Hazards;48.2
+Unloading;Hazards;ERROR
+Loading;Duration;12.1
+Loading;Hazards;41.3
+Unloading;Hazards;1
+Shipping;Duration;48.2
+Picking;Round trips;5
+Unloading;Hazards;2
+Shipping;Duration;41.3
+Shipping;Stops;3
+Loading;Hazards;ERROR
+Picking;Round trips;2
+Unloading;Duration;8.3
+Loading;Hazards;3
+Loading;Duration;25.1
+Loading;Hazards;12.2
+Shipping;Fuel;10.17
+Unloading;Duration;8.5
+Picking;Round trips;3
+Shipping;Stops;13
+Picking;Duration;12.2
+Unloading;Hazards;4
+Picking;Duration;13.7
+Picking;Round trips;2
+Shipping;Fuel;7.29
+Shipping;Stops;11
+Shipping;Fuel;4.29
+Shipping;Stops;9
+Unloading;Duration;12.4
+Unloading;Hazards;ERROR
+Shipping;Duration;42.9
+Loading;Duration;18.1
+Picking;Round trips;5
+Unloading;Duration;11.7
+Loading;Duration;22.6
+Loading;Hazards;5
+Shipping;Stops;ERROR
+Shipping;Fuel;15.55
+Picking;Round trips;4
+Picking;Duration;26.4
+Unloading;Hazards;5
+Loading;Duration;10.6
+Picking;Round trips;4
+Unloading;Hazards;3
+Loading;Duration;15
+Loading;Hazards;18
+Unloading;Hazards;ERROR
+Unloading;Duration;6.3
+Shipping;Stops;8
+Picking;Duration;10.4
+Loading;Duration;18
+Shipping;Fuel;1.59
+Shipping;Stops;10
+Picking;Round trips;4
+Shipping;Stops;13
+Picking;Round trips;3
+Loading;Hazards;4
+Unloading;Hazards;3
+Unloading;Hazards;6
+Picking;Round trips;3
+Shipping;Stops;2
+Unloading;Hazards;4
+Picking;Round trips;2
+Picking;Round trips;5
+Loading;Hazards;3
+Loading;Duration;15
+Shipping;Fuel;2.64
+Unloading;Hazards;1
+Shipping;Stops;10
+Loading;Hazards;3
+Loading;Hazards;7
+Shipping;Fuel;1.52
+Picking;Duration;7.9
+Shipping;Fuel;2.12
+Picking;Round trips;3
+Unloading;Hazards;7
+Unloading;Duration;10.1
+Shipping;Stops;8
+Unloading;Hazards;ERROR
+Picking;Round trips;4
+Shipping;Stops;9
+Loading;Hazards;3
+Shipping;Duration;36
+Picking;Duration;ERROR
+Shipping;Stops;1
+Picking;Duration;37.4
+Picking;Round trips;3
+Loading;Hazards;4
+Picking;Duration;7.5
+Unloading;Hazards;3
+Shipping;Stops;6
+Shipping;Fuel;7.87
+Picking;Round trips;4
+Picking;Round trips;2
+Picking;Round trips;1
+Loading;Duration;1.8
+Picking;Round trips;1
+Shipping;Duration;14.6
+Picking;Round trips;ERROR
+Picking;Duration;23
+Picking;Round trips;3
+Loading;Duration;7.3
+Unloading;Duration;9.6
+Picking;Round trips;5
+Shipping;Fuel;12.71
+Shipping;Fuel;1.82
+Shipping;Duration;28.3
+Picking;Duration;24.3
+Unloading;Duration;8.3
+Unloading;Hazards;5
+Shipping;Stops;11
+Shipping;Fuel;13.76
+Unloading;Duration;ERROR
+Loading;Duration;9.7
+Shipping;Fuel;3.07
+Loading;Hazards;3
+Loading;Duration;25.6
+Loading;Hazards;ERROR
+Unloading;Duration;4.7
+Unloading;Hazards;2
+Shipping;Stops;3
+Loading;Duration;19.8
+Shipping;Stops;1
+Picking;Round trips;1
+Picking;Duration;18.8
+Unloading;Hazards;6
+Picking;Duration;7.3
+Picking;Round trips;5
+Loading;Hazards;7
+Loading;Duration;18.6
+Shipping;Duration;10.6
+Unloading;Duration;15.1
+Shipping;Stops;7
+Unloading;Hazards;7
+Unloading;Hazards;2
+Unloading;Duration;ERROR
+Picking;Duration;38.5
+Picking;Round trips;ERROR
+Loading;Duration;9.3
+Unloading;Duration;4.6
+Shipping;Stops;4
+Shipping;Stops;12
+Loading;Hazards;1
+Unloading;Hazards;1
+Shipping;Fuel;7.93
+Picking;Duration;14.3
+Shipping;Duration;ERROR
+Unloading;Hazards;1
+Unloading;Hazards;4
+Loading;Duration;6.3
+Unloading;Hazards;ERROR
+Unloading;Duration;11.5
+Unloading;Hazards;6
+Shipping;Stops;6
+Unloading;Hazards;3
+Unloading;Hazards;3
+Shipping;Stops;1
+Picking;Duration;29.1
+Unloading;Hazards;5
+Loading;Duration;21.8
+Picking;Duration;22.6
+Loading;Hazards;33.2
+Picking;Duration;33.9
+Picking;Duration;10.9
+Picking;Duration;37.2
+Loading;Hazards;2
+Picking;Duration;33.2
+Unloading;Duration;18.1
+Shipping;Stops;6
+Loading;Duration;21.5
+Picking;Round trips;2
+Shipping;Duration;30.3
+Loading;Duration;7.3
+Shipping;Duration;4.9
+Unloading;Hazards;2
+Loading;Duration;12.7
+Loading;Duration;26.8
+Shipping;Stops;4
+Picking;Duration;11.6
+Unloading;Hazards;2
+Unloading;Duration;19.5
+Shipping;Duration;25.3
+Shipping;Stops;10
+Shipping;Fuel;2.78
+Picking;Round trips;1
+Loading;Hazards;ERROR
+Picking;Duration;23.5
+Shipping;Duration;49.1
+Shipping;Stops;5
+Loading;Hazards;26.1
+Loading;Hazards;18
+Shipping;Fuel;12.01
+Unloading;Duration;6.2
+Loading;Hazards;21.2
+Shipping;Duration;26.1
+Loading;Duration;18
+Shipping;Duration;9.3
+Loading;Duration;1.3
+Shipping;Duration;21.2
+Picking;Duration;13.7
+Shipping;Duration;19.1
+Shipping;Duration;6.5
+Loading;Duration;10.9
+Shipping;Duration;53.9
+Shipping;Fuel;12.81
+Unloading;Hazards;1
+Loading;Duration;1.7
+Loading;Hazards;14
+Unloading;Hazards;2
+Picking;Round trips;2
+Shipping;Duration;50.6
+Shipping;Duration;21.5
+Loading;Duration;14
+Unloading;Duration;6.9
+Shipping;Stops;2
+Shipping;Stops;3
+Shipping;Duration;3.9
+Shipping;Duration;28.1
+Loading;Hazards;19.4
+Loading;Duration;26.4
+Loading;Duration;12.3
+Unloading;Duration;ERROR
+Shipping;Stops;1
+Picking;Duration;19.4
+Loading;Duration;12.7
+Shipping;Duration;7.8
+Shipping;Duration;21.3
+Shipping;Fuel;1.63
+Unloading;Duration;16.8
+Shipping;Stops;1
+Picking;Round trips;ERROR
+Picking;Round trips;5
+Shipping;Fuel;1.28
+Shipping;Duration;1.8
+Shipping;Fuel;10.02
+Loading;Hazards;4
+Shipping;Stops;7
+Picking;Duration;7
+Unloading;Duration;11.5
+Loading;Hazards;9.37
+Unloading;Hazards;4
+Picking;Duration;18.3
+Loading;Hazards;4.8
+Shipping;Stops;5
+Shipping;Fuel;9.37
+Shipping;Fuel;7.19
+Loading;Duration;26.5
+Shipping;Duration;4.8
+Unloading;Hazards;3
+Loading;Hazards;4
+Unloading;Hazards;3
+Unloading;Hazards;3
+Shipping;Fuel;6.21
+Unloading;Hazards;7
+Shipping;Duration;4
+Picking;Round trips;5
+Loading;Duration;ERROR
+Loading;Duration;11.1
+Unloading;Duration;ERROR
+Shipping;Fuel;14.62
+Shipping;Fuel;8.57
+Shipping;Duration;34.5
+Shipping;Fuel;13.43
+Loading;Hazards;1
+Loading;Duration;10.4
+Picking;Round trips;3
+Loading;Hazards;ERROR
+Shipping;Duration;53
+Picking;Round trips;1
+Picking;Round trips;5
+Loading;Duration;25.6
+Picking;Duration;19.2
+Loading;Duration;13.8
+Picking;Duration;23.9
+Loading;Duration;7.2
+Unloading;Duration;7.3
+Shipping;Fuel;11.86
+Loading;Hazards;19.8
+Picking;Duration;8.8
+Shipping;Fuel;3.05
+Shipping;Stops;4
+Picking;Round trips;3
+Unloading;Duration;19.8
+Shipping;Stops;11
+Unloading;Hazards;2
+Shipping;Stops;5
+Picking;Duration;14.9
+Shipping;Stops;6
+Picking;Round trips;2
+Loading;Hazards;9.2
+Loading;Duration;6
+Picking;Duration;6.6
+Shipping;Fuel;14.86
+Shipping;Stops;8
+Shipping;Fuel;9.2
+Unloading;Duration;14.9
+Shipping;Duration;11.3
+Shipping;Duration;47.1
+Picking;Duration;12.4
+Loading;Duration;13.6
+Shipping;Duration;18.7
+Shipping;Duration;25
+Shipping;Fuel;ERROR
+Loading;Duration;5.8
+Loading;Duration;26.4
+Shipping;Stops;11
+Unloading;Hazards;2
+Picking;Duration;38.6
+Unloading;Duration;16.5
+Picking;Round trips;ERROR
+Shipping;Stops;4
+Picking;Duration;38.4
+Loading;Hazards;34.1
+Loading;Hazards;ERROR
+Picking;Round trips;3
+Shipping;Stops;12
+Shipping;Stops;13
+Picking;Duration;34.1
+Shipping;Duration;ERROR
+Loading;Hazards;38.5
+Loading;Duration;24.2
+Shipping;Stops;5
+Picking;Duration;25.1
+Picking;Duration;29.7
+Picking;Duration;38.5
+Shipping;Duration;48.5
+Picking;Duration;30.3
+Unloading;Duration;17.4
+Shipping;Duration;31.9
+Unloading;Hazards;6
+Shipping;Duration;47.5
+Loading;Duration;ERROR
+Unloading;Duration;12.9
+Unloading;Hazards;1
+Loading;Duration;1.9
+Shipping;Duration;14.3
+Unloading;Hazards;1
+Shipping;Fuel;3.06
+Shipping;Duration;18.1
+Loading;Duration;ERROR
+Loading;Duration;26.4
+Picking;Round trips;3
+Picking;Duration;25.1
+Unloading;Hazards;5
+Picking;Duration;25.5
+Shipping;Duration;10.1
+Picking;Duration;2.1
+Shipping;Duration;22.6
+Shipping;Fuel;8.88
+Loading;Duration;16.3
+Shipping;Stops;2
+Unloading;Hazards;7
+Unloading;Hazards;4
+Shipping;Fuel;9.81
+Shipping;Fuel;5.01
+Loading;Hazards;10.5
+Shipping;Stops;8
+Loading;Duration;4.4
+Shipping;Stops;6
+Shipping;Duration;18.8
+Unloading;Duration;10.5
+Shipping;Fuel;8.52
+Picking;Duration;26.5
+Loading;Duration;22.9
+Picking;Round trips;4
+Unloading;Duration;15.5
+Shipping;Fuel;3.67
+Unloading;Duration;1.5
+Shipping;Fuel;1.01
+Unloading;Hazards;1
+Shipping;Fuel;8.22
+Picking;Round trips;3
+Picking;Duration;38.2
+Loading;Hazards;11
+Loading;Hazards;4
+Picking;Round trips;5
+Shipping;Fuel;2.24
+Loading;Duration;25.8
+Shipping;Stops;11
+Picking;Round trips;4
+Loading;Hazards;4
+Loading;Hazards;1.3
+Unloading;Duration;14.9
+Picking;Round trips;5
+Loading;Duration;7.7
+Picking;Round trips;4
+Loading;Duration;1.3
+Shipping;Fuel;10.91
+Shipping;Fuel;10.84
+Loading;Hazards;10.6
+Picking;Round trips;4
+Loading;Hazards;25.1
+Picking;Duration;ERROR
+Loading;Hazards;1
+Picking;Duration;10.6
+Shipping;Duration;22.6
+Loading;Duration;25.1
+Shipping;Duration;26.5
+Picking;Round trips;1
+Unloading;Hazards;5
+Loading;Duration;ERROR
+Unloading;Duration;18
+Loading;Hazards;5
+Loading;Hazards;14.5
+Shipping;Duration;1.1
+Shipping;Stops;10
+Picking;Duration;15
+Unloading;Duration;5
+Shipping;Duration;14.5
+Loading;Duration;15.4
+Picking;Duration;16.2
+Unloading;Duration;13
+Picking;Duration;33
+Unloading;Hazards;5
+Loading;Hazards;37.4
+Picking;Duration;8.7
+Shipping;Duration;1.9
+Unloading;Hazards;3
+Unloading;Duration;8.8
+Shipping;Duration;37.4
+Unloading;Hazards;2
+Loading;Duration;16
+Shipping;Duration;4.2
+Loading;Hazards;ERROR
+Shipping;Duration;17.8
+Loading;Duration;3.5
+Unloading;Duration;2
+Loading;Duration;13.7
+Picking;Round trips;2
+Picking;Duration;7.4
+Loading;Hazards;16.2
+Picking;Duration;10.8
+Shipping;Duration;36.2
+Unloading;Hazards;4
+Loading;Duration;13.6
+Unloading;Duration;16.2
+Loading;Hazards;10
+Picking;Duration;9.2
+Shipping;Duration;20.4
+Unloading;Duration;6.9
+Shipping;Duration;11.8
+Shipping;Stops;10
+Unloading;Duration;5.8
+Loading;Hazards;4.2
+Loading;Hazards;1
+Unloading;Duration;ERROR
+Shipping;Stops;13
+Picking;Duration;27.8
+Unloading;Duration;4.2
+Unloading;Duration;1
+Unloading;Duration;11.3
+Loading;Hazards;18.4
+Shipping;Stops;1
+Unloading;Duration;7.4
+Shipping;Duration;36.3
+Picking;Round trips;5
+Picking;Duration;18.4
+Picking;Duration;28.8
+Loading;Duration;26.6
+Shipping;Stops;6
+Loading;Hazards;9.6
+Unloading;Duration;4.9
+Picking;Duration;37.1
+Picking;Round trips;1
+Loading;Hazards;ERROR
+Unloading;Duration;9.6
+Loading;Duration;15.9
+Shipping;Duration;49.9
+Shipping;Duration;2.4
+Loading;Hazards;ERROR
+Shipping;Duration;10.7
+Shipping;Duration;33.9
+Loading;Hazards;ERROR
+Unloading;Hazards;3
+Shipping;Fuel;4.42
+Loading;Duration;14
+Shipping;Stops;9
+Loading;Hazards;ERROR
+Unloading;Hazards;5
+Unloading;Hazards;ERROR
+Loading;Hazards;1
+Picking;Duration;21.5
+Unloading;Hazards;4
+Loading;Hazards;ERROR
+Unloading;Duration;11.7
+Shipping;Stops;1
+Loading;Hazards;15.6
+Picking;Duration;27.7
+Unloading;Hazards;ERROR
+Loading;Duration;10.1
+Shipping;Duration;49.8
+Loading;Duration;15.6
+Loading;Hazards;10.3
+Loading;Duration;9.6
+Shipping;Stops;3
+Unloading;Duration;16.8
+Picking;Round trips;3
+Loading;Hazards;10.3
+Picking;Duration;ERROR
+Shipping;Fuel;15.38
+Picking;Duration;19.9
+Shipping;Stops;ERROR
+Picking;Duration;10.3
+Shipping;Fuel;1
+Unloading;Hazards;5
+Loading;Duration;26.9
+Shipping;Fuel;8.2
+Picking;Duration;38.9
+Unloading;Hazards;ERROR
+Shipping;Duration;ERROR
+Unloading;Duration;5.6
+Shipping;Fuel;3.41
+Shipping;Duration;49.7
+Shipping;Duration;53.5
+Picking;Duration;38
+Picking;Round trips;4
+Shipping;Duration;20.2
+Unloading;Duration;9.6
+Shipping;Fuel;11.83
+Loading;Duration;3.2
+Picking;Round trips;2
+Loading;Hazards;38.1
+Loading;Hazards;1
+Picking;Round trips;3
+Picking;Round trips;2
+Picking;Duration;12.6
+Picking;Duration;38.1
+Picking;Round trips;1
+Picking;Round trips;1
+Unloading;Hazards;7
+Picking;Round trips;1
+Picking;Round trips;2
+Picking;Duration;1.6
+Loading;Hazards;4
+Picking;Round trips;2
+Shipping;Fuel;8.75
+Unloading;Hazards;ERROR
+Loading;Duration;14.4
+Picking;Round trips;4
+Shipping;Fuel;11.89
+Unloading;Hazards;1
+Shipping;Duration;49.9
+Loading;Duration;13.4
+Unloading;Duration;ERROR
+Unloading;Hazards;2
+Picking;Duration;ERROR
+Shipping;Duration;23.3
+Shipping;Duration;24.5
+Picking;Duration;7.7
+Picking;Duration;8.5
+Loading;Hazards;18.7
+Loading;Hazards;7
+Picking;Duration;11.1
+Shipping;Stops;2
+Shipping;Fuel;10.78
+Shipping;Duration;18.7
+Unloading;Hazards;7
+Loading;Duration;1.9
+Shipping;Stops;12
+Shipping;Stops;5
+Loading;Hazards;4
+Shipping;Duration;47.7
+Shipping;Fuel;6.01
+Unloading;Duration;9
+Picking;Round trips;5
+Picking;Round trips;4
+Unloading;Duration;5.1
+Picking;Round trips;5
+Shipping;Duration;5
+Loading;Hazards;9.9
+Shipping;Stops;1
+Shipping;Fuel;5.92
+Shipping;Duration;34.4
+Shipping;Fuel;14.13
+Unloading;Duration;9.9
+Loading;Hazards;12
+Loading;Duration;21.6
+Unloading;Hazards;6
+Unloading;Hazards;7
+Loading;Hazards;4
+Shipping;Stops;12
+Unloading;Hazards;1
+Picking;Duration;19.3
+Shipping;Duration;26.1
+Picking;Round trips;4
+Loading;Hazards;11
+Shipping;Duration;3.4
+Shipping;Fuel;12.08
+Picking;Duration;21.4
+Unloading;Duration;18.1
+Shipping;Stops;11
+Picking;Round trips;3
+Unloading;Duration;4.2
+Unloading;Duration;13.2
+Loading;Hazards;0
+Shipping;Fuel;10.13
