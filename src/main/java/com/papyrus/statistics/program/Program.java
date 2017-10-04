@@ -10,7 +10,7 @@ import com.papyrus.statistics.output.OutputTarget;
 
 import java.io.*;
 
-public class Program {
+public final class Program {
     public static void main(String[] args) throws IOException {
         final InputStream inputStream = new FileInputStream(args[0]);
         final InputSource source = new CSVInputSource(inputStream);

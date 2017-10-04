@@ -1,6 +1,6 @@
 package com.papyrus.statistics;
 
-public class CollectedEntry {
+public final class CollectedEntry {
     public final double total;
     public final int count;
     public final int errors;

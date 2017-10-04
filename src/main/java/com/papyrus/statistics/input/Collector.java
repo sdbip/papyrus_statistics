@@ -5,7 +5,7 @@ import com.papyrus.statistics.*;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Collector {
+public final class Collector {
     private final CollectedData collectedData = new CollectedData();
     private final InputSource source;
 
