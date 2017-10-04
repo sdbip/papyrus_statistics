@@ -37,6 +37,18 @@ public class OutputTest {
     }
 
     @Test
+    public void sortsHeadersByTotalErrors() throws IOException {
+        final CalculatedData calculatedData = new CalculatedData();
+        calculatedData.totalErrorsByMeasure.put(TestMeasures.duration, 30);
+        calculatedData.totalErrorsByMeasure.put(TestMeasures.fuel, 10);
+
+        final Output output = new Output(testTarget);
+        output.output(calculatedData);
+
+        assertEquals(Arrays.asList(TestMeasures.duration, TestMeasures.fuel), testTarget.writtenHeaders);
+    }
+
+    @Test
     public void outputsStatisticsPerStep() throws IOException {
         final CalculatedData calculatedData = new CalculatedData();
         calculatedData.totalErrorsByMeasure.put(TestMeasures.duration, 30);

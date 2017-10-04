@@ -1,10 +1,7 @@
 package com.papyrus.statistics;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 class Output {
     private final OutputTarget target;
@@ -24,9 +21,10 @@ class Output {
         }
     }
 
-    private List<Measure> getMeasures(final Map<Measure, ?> map) {
+    private List<Measure> getMeasures(final Map<Measure, Integer> map) {
         final List<Measure> result = new ArrayList<>();
         result.addAll(map.keySet());
+        result.sort((measure1, measure2) -> map.get(measure2) - map.get(measure1));
         return result;
     }
 }
