@@ -30,10 +30,10 @@ class CSVOutputTarget implements OutputTarget {
     }
 
     @Override
-    public void write(final Step step, final Iterable<CalculatedEntry> entries) throws IOException {
+    public void write(final Step step, final Iterable<CollectedEntry> entries) throws IOException {
         final List<String> values = new ArrayList<>();
         values.add(step.name);
-        for (final CalculatedEntry entry : entries) {
+        for (final CollectedEntry entry : entries) {
             values.add(Double.toString(entry.total / entry.count));
             values.add(Integer.toString(entry.errors));
         }

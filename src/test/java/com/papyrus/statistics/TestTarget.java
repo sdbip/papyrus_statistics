@@ -6,7 +6,7 @@ class TestTarget implements OutputTarget {
     boolean isClosed;
     Iterable<Measure> writtenHeaders;
     Step lastWrittenStep;
-    Iterable<CalculatedEntry> lastWrittenEntries;
+    Iterable<CollectedEntry> lastWrittenEntries;
 
     @Override
     public void writeHeaders(final Iterable<Measure> measures) throws IOException {
@@ -14,7 +14,7 @@ class TestTarget implements OutputTarget {
     }
 
     @Override
-    public void write(final Step step, final Iterable<CalculatedEntry> entries) throws IOException {
+    public void write(final Step step, final Iterable<CollectedEntry> entries) throws IOException {
         lastWrittenStep = step;
         lastWrittenEntries = entries;
     }

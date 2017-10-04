@@ -16,7 +16,7 @@ class Output {
 
         final Set<Step> steps = collectedData.entries.keySet();
         for (final Step step : steps) {
-            final List<CalculatedEntry> entries = new ArrayList<>();
+            final List<CollectedEntry> entries = new ArrayList<>();
             for (final Measure measure : measures) {
                 entries.add(collectedData.entries.get(step).get(measure));
             }

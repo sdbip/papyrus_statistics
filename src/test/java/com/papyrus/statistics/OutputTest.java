@@ -55,12 +55,12 @@ public class OutputTest {
         collectedData.entries.put(TestSteps.picking, new HashMap<>());
         collectedData.entries.get(TestSteps.picking).put(
                 TestMeasures.duration,
-                new CalculatedEntry(9.0, 1, 30));
+                new CollectedEntry(9.0, 1, 30));
 
         final Output output = new Output(testTarget);
         output.output(collectedData);
 
-        final List<CalculatedEntry> entries = new ArrayList<>();
+        final List<CollectedEntry> entries = new ArrayList<>();
         testTarget.lastWrittenEntries.forEach(entries::add);
 
         assertEquals(1, entries.size());
@@ -77,15 +77,15 @@ public class OutputTest {
         collectedData.entries.put(TestSteps.picking, new HashMap<>());
         collectedData.entries.get(TestSteps.picking).put(
                 TestMeasures.duration,
-                new CalculatedEntry(9.0, 1, 30));
+                new CollectedEntry(9.0, 1, 30));
         collectedData.entries.get(TestSteps.picking).put(
                 TestMeasures.fuel,
-                new CalculatedEntry(8.7, 1, 10));
+                new CollectedEntry(8.7, 1, 10));
 
         final Output output = new Output(testTarget);
         output.output(collectedData);
 
-        final List<CalculatedEntry> entries = new ArrayList<>();
+        final List<CollectedEntry> entries = new ArrayList<>();
         testTarget.lastWrittenEntries.forEach(entries::add);
 
         assertEquals(2, entries.size());
