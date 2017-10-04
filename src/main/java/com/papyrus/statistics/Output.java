@@ -14,5 +14,10 @@ class Output {
         final Set<Measure> measures = calculatedData.totalErrorsByMeasure.keySet();
         for (final Measure measure : measures)
             target.writeHeaders(measure);
+        final Set<Step> steps = calculatedData.entries.keySet();
+        for (final Step step : steps) {
+            for (final Measure measure : measures)
+                target.write(step, calculatedData.entries.get(step).get(measure));
+        }
     }
 }
