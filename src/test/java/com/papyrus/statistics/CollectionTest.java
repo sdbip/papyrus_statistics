@@ -10,15 +10,15 @@ import static org.junit.Assert.assertEquals;
 public final class CollectionTest {
     private final Measurement defaultMeasurement = new Measurement(TestSteps.picking, TestMeasures.duration);
     private final TestSource testSource = new TestSource();
-    private final Collector collector = new Collector(testSource);
+    private final NewCollector collector = new NewCollector(testSource);
 
     @Test
     public void collectsSingleValue() {
         testSource.entries = Collections.singletonList(new CollectedEntry(defaultMeasurement, 9.0));
 
-        collector.collect();
+        final CalculatedData calculatedData = collector.collect();
 
-        assertEquals(Collections.singletonList(9.0), collector.getValues(defaultMeasurement));
+        assertEquals(9.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).average, 0.001);
     }
 
     @Test
@@ -27,9 +27,9 @@ public final class CollectionTest {
                 new CollectedEntry(defaultMeasurement, 9.0),
                 new CollectedEntry(defaultMeasurement, 11.0));
 
-        collector.collect();
+        final CalculatedData calculatedData = collector.collect();
 
-        assertEquals(Arrays.asList(9.0, 11.0), collector.getValues(defaultMeasurement));
+        assertEquals(10.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).average, 0.001);
     }
 
     @Test
@@ -39,9 +39,8 @@ public final class CollectionTest {
                 new CollectedEntry(new Measurement(TestSteps.other, defaultMeasurement.measure), 11.0),
                 new CollectedEntry(new Measurement(defaultMeasurement.step, TestMeasures.other), 11.0));
 
-        collector.collect();
+        final CalculatedData calculatedData = collector.collect();
 
-        assertEquals(Collections.singletonList(9.0), collector.getValues(defaultMeasurement));
+        assertEquals(9.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).average, 0.001);
     }
-
 }
