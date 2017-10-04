@@ -16,7 +16,7 @@ public class Program {
 
         final OutputStream outputStream = new FileOutputStream(args[1]);
         final OutputTarget target = new CSVOutputTaget(outputStream);
-//        final Output output = new Output(target);
-//        output.output(calculatedData);
+        final Output output = new Output(target);
+        output.output(calculatedData);
     }
 }
