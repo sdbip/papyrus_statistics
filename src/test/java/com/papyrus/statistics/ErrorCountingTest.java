@@ -10,7 +10,7 @@ import static org.junit.Assert.assertEquals;
 public final class ErrorCountingTest {
     private final Measurement defaultMeasurement = new Measurement(TestSteps.picking, TestMeasures.duration);
     private final TestSource testSource = new TestSource();
-    private final NewCollector collector = new NewCollector(testSource);
+    private final Collector collector = new Collector(testSource);
 
     @Test
     public void countsSingleError() {

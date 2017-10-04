@@ -3,23 +3,22 @@ package com.papyrus.statistics;
 import java.util.ArrayList;
 import java.util.List;
 
-final class Collector {
+class Collector {
     private final CollectedData collectedData = new CollectedData();
     private final Source source;
 
-    Collector(Source source) {
+    Collector(final Source source) {
         this.source = source;
     }
 
-    CollectedData collect() {
+    CalculatedData collect() {
         for (final CollectedEntry entry : source.entries()) {
             if (entry.isError)
                 reportError(entry.measurement);
             else
                 add(entry.measurement, entry.value);
         }
-
-        return collectedData;
+        return new Calculator().calculate(collectedData);
     }
 
     private void add(Measurement measurement, double value) {
@@ -27,16 +26,12 @@ final class Collector {
         values.add(value);
     }
 
-    List<Double> getValues(Measurement measurement) {
-        return collectedData.measurements.get(measurement);
-    }
-
     private void reportError(Measurement measurement) {
         final int before = errorCount(measurement);
         collectedData.errors.put(measurement, before + 1);
     }
 
-    int errorCount(Measurement measurement) {
+    private int errorCount(Measurement measurement) {
         final Integer storedValue = collectedData.errors.get(measurement);
         return storedValue == null ? 0 : storedValue;
     }
