@@ -14,7 +14,9 @@ public class Program {
         final Calculator calculator = new Calculator();
         final CalculatedData calculatedData = calculator.calculate(collectedData);
 
-//        final Output output = new FileOutput(args[1]);
-//        output.write(calculatedData);
+        final OutputStream outputStream = new FileOutputStream(args[1]);
+        final CSVOutput output = new CSVOutput(outputStream);
+//        final Outputter outputter = new Outputter(output);
+//        outputter.output(calculatedData);
     }
 }
