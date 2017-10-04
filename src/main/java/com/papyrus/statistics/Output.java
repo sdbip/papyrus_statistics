@@ -11,13 +11,13 @@ class Output {
     }
 
     void output(final CalculatedData calculatedData) throws IOException {
-        final Set<Measure> measures = calculatedData.totalErrorsByMeasure.keySet();
-        target.writeHeaders(getMeasures(calculatedData.totalErrorsByMeasure));
+        final List<Measure> measures = getMeasures(calculatedData.totalErrorsByMeasure);
+        target.writeHeaders(measures);
 
         final Set<Step> steps = calculatedData.entries.keySet();
         for (final Step step : steps) {
             final List<CalculatedEntry> entries = new ArrayList<>();
-            for (final Measure measure : getMeasures(calculatedData.totalErrorsByMeasure)) {
+            for (final Measure measure : measures) {
                 entries.add(calculatedData.entries.get(step).get(measure));
             }
             target.write(step, entries);
