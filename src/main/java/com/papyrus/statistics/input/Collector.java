@@ -1,16 +1,18 @@
-package com.papyrus.statistics;
+package com.papyrus.statistics.input;
+
+import com.papyrus.statistics.*;
 
 import java.util.HashMap;
 import java.util.Map;
 
-class Collector {
+public class Collector {
     private final InputSource source;
 
-    Collector(final InputSource source) {
+    public Collector(final InputSource source) {
         this.source = source;
     }
 
-    CollectedData collect() {
+    public CollectedData collect() {
         final CollectedData collectedData = new CollectedData();
 
         for (final InputEntry entry : source.entries()) {

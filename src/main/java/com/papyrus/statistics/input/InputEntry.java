@@ -1,4 +1,7 @@
-package com.papyrus.statistics;
+package com.papyrus.statistics.input;
+
+import com.papyrus.statistics.Measure;
+import com.papyrus.statistics.Step;
 
 public final class InputEntry {
     public final Step step;

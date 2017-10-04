@@ -1,5 +1,8 @@
-package com.papyrus.statistics;
+package com.papyrus.statistics.input;
 
+import com.papyrus.statistics.CollectedData;
+import com.papyrus.statistics.TestMeasures;
+import com.papyrus.statistics.TestSteps;
 import org.junit.Test;
 
 import java.util.Arrays;

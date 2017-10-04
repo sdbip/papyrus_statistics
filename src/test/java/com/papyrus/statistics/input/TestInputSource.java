@@ -1,4 +1,4 @@
-package com.papyrus.statistics;
+package com.papyrus.statistics.input;
 
 import java.util.List;
 

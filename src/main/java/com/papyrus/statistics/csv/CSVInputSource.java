@@ -1,7 +1,7 @@
 package com.papyrus.statistics.csv;
 
-import com.papyrus.statistics.InputEntry;
-import com.papyrus.statistics.InputSource;
+import com.papyrus.statistics.input.InputEntry;
+import com.papyrus.statistics.input.InputSource;
 import com.papyrus.statistics.Measure;
 import com.papyrus.statistics.Step;
 import org.apache.commons.csv.CSVFormat;

@@ -2,6 +2,8 @@ package com.papyrus.statistics;
 
 import com.papyrus.statistics.csv.CSVInputSource;
 import com.papyrus.statistics.csv.CSVOutputTarget;
+import com.papyrus.statistics.input.Collector;
+import com.papyrus.statistics.input.InputSource;
 
 import java.io.*;
 
