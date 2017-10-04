@@ -31,7 +31,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>com.papyrus.statistics.Program</mainClass>
+                            <mainClass>com.papyrus.statistics.program.Program</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

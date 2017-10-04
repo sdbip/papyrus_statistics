@@ -1,5 +1,6 @@
-package com.papyrus.statistics;
+package com.papyrus.statistics.program;
 
+import com.papyrus.statistics.CollectedData;
 import com.papyrus.statistics.csv.CSVInputSource;
 import com.papyrus.statistics.csv.CSVOutputTarget;
 import com.papyrus.statistics.input.Collector;
