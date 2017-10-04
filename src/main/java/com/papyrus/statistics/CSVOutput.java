@@ -7,22 +7,29 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.util.ArrayList;
+import java.util.List;
 
 class CSVOutput {
     private final static CSVFormat EXCEL_FORMAT = CSVFormat.EXCEL.withDelimiter(';');
 
     private final CSVPrinter printer;
 
-    CSVOutput(final OutputStream stream, Measure... measures) throws IOException {
+    CSVOutput(final OutputStream stream) throws IOException {
         printer = new CSVPrinter(new OutputStreamWriter(stream), EXCEL_FORMAT);
     }
 
-    void writeHeaders() throws IOException {
-        printer.printRecord("Process step", "Average Duration", "Errors Duration");
+    void writeHeaders(Measure... measures) throws IOException {
+        final List<String> values = new ArrayList<>();
+        values.add("Process step");
+        for (final Measure measure : measures) {
+            values.add("Average " + measure.name);
+            values.add("Errors " + measure.name);
+        }
+        printer.printRecord(values);
     }
 
     void write(Step step, CalculatedEntry... entries) throws IOException {
-        final ArrayList<String> values = new ArrayList<>();
+        final List<String> values = new ArrayList<>();
         values.add(step.name);
         for (final CalculatedEntry entry : entries) {
             values.add(Double.toString(entry.average));

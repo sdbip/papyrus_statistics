@@ -12,9 +12,9 @@ public class CSVOutputTest {
     @Test
     public void outputsDataInAUsefulFormat() throws IOException {
         final OutputStream outputStream = new ByteArrayOutputStream();
-        final CSVOutput output = new CSVOutput(outputStream, TestMeasures.duration);
+        final CSVOutput output = new CSVOutput(outputStream);
 
-        output.writeHeaders();
+        output.writeHeaders(TestMeasures.duration);
         output.write(TestSteps.picking, new CalculatedEntry(8.7, 11));
         output.write(TestSteps.loading, new CalculatedEntry(5.6, 23));
         output.close();

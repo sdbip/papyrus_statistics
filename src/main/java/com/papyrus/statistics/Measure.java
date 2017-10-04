@@ -1,7 +1,7 @@
 package com.papyrus.statistics;
 
 final class Measure {
-    private final String name;
+    final String name;
 
     Measure(String name) {
         this.name = name;
