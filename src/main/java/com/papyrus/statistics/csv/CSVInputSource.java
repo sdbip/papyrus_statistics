@@ -1,5 +1,9 @@
-package com.papyrus.statistics;
+package com.papyrus.statistics.csv;
 
+import com.papyrus.statistics.InputEntry;
+import com.papyrus.statistics.InputSource;
+import com.papyrus.statistics.Measure;
+import com.papyrus.statistics.Step;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVParser;
 import org.apache.commons.csv.CSVRecord;
@@ -9,11 +13,11 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Iterator;
 
-class CSVInputSource implements InputSource {
+public class CSVInputSource implements InputSource {
     private static final CSVFormat EXCEL_FORMAT = CSVFormat.EXCEL.withHeader().withDelimiter(';');
     private final CSVParser parser;
 
-    CSVInputSource(final InputStream stream) throws IOException {
+    public CSVInputSource(final InputStream stream) throws IOException {
         final InputStreamReader reader = new InputStreamReader(stream);
         parser = EXCEL_FORMAT.parse(reader);
     }

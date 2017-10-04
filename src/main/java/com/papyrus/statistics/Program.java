@@ -1,5 +1,8 @@
 package com.papyrus.statistics;
 
+import com.papyrus.statistics.csv.CSVInputSource;
+import com.papyrus.statistics.csv.CSVOutputTarget;
+
 import java.io.*;
 
 public class Program {

@@ -1,9 +1,9 @@
 package com.papyrus.statistics;
 
-final class Measure {
-    final String name;
+public final class Measure {
+    public final String name;
 
-    Measure(String name) {
+    public Measure(String name) {
         this.name = name;
     }
 

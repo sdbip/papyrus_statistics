@@ -1,5 +1,8 @@
-package com.papyrus.statistics;
+package com.papyrus.statistics.csv;
 
+import com.papyrus.statistics.CollectedEntry;
+import com.papyrus.statistics.TestMeasures;
+import com.papyrus.statistics.TestSteps;
 import org.junit.Test;
 
 import java.io.ByteArrayOutputStream;

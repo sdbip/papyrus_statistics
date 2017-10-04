@@ -1,9 +1,9 @@
 package com.papyrus.statistics;
 
-final class Step {
-    final String name;
+public final class Step {
+    public final String name;
 
-    Step(String name) {
+    public Step(String name) {
         this.name = name;
     }
 

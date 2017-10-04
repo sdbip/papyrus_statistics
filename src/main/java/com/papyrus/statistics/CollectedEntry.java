@@ -1,11 +1,11 @@
 package com.papyrus.statistics;
 
-class CollectedEntry {
-    final double total;
-    final int count;
-    final int errors;
+public class CollectedEntry {
+    public final double total;
+    public final int count;
+    public final int errors;
 
-    CollectedEntry(final double total, final int count, final int errors) {
+    public CollectedEntry(final double total, final int count, final int errors) {
         this.total = total;
         this.count = count;
         this.errors = errors;

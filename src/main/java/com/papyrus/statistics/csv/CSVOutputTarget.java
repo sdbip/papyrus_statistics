@@ -1,5 +1,9 @@
-package com.papyrus.statistics;
+package com.papyrus.statistics.csv;
 
+import com.papyrus.statistics.CollectedEntry;
+import com.papyrus.statistics.Measure;
+import com.papyrus.statistics.OutputTarget;
+import com.papyrus.statistics.Step;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;
 
@@ -9,12 +13,12 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-class CSVOutputTarget implements OutputTarget {
+public class CSVOutputTarget implements OutputTarget {
     private final static CSVFormat EXCEL_FORMAT = CSVFormat.EXCEL.withDelimiter(';');
 
     private final CSVPrinter printer;
 
-    CSVOutputTarget(final OutputStream stream) throws IOException {
+    public CSVOutputTarget(final OutputStream stream) throws IOException {
         printer = new CSVPrinter(new OutputStreamWriter(stream), EXCEL_FORMAT);
     }
 

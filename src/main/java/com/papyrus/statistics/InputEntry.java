@@ -1,16 +1,16 @@
 package com.papyrus.statistics;
 
-final class InputEntry {
-    final Step step;
-    final Measure measure;
-    final boolean isError;
-    final double value;
+public final class InputEntry {
+    public final Step step;
+    public final Measure measure;
+    public final boolean isError;
+    public final double value;
 
-    static InputEntry error(final Step step, final Measure measure) {
+    public static InputEntry error(final Step step, final Measure measure) {
         return new InputEntry(step, measure, true, 0);
     }
 
-    InputEntry(final Step step, final Measure measure, final double value) {
+    public InputEntry(final Step step, final Measure measure, final double value) {
         this(step, measure, false, value);
     }
 
