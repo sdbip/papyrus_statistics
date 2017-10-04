@@ -27,8 +27,8 @@ public class CSVOutputTarget implements OutputTarget {
         final List<String> values = new ArrayList<>();
         values.add("Process step");
         for (final Measure measure : measures) {
-            values.add("Average " + measure.name);
-            values.add("Errors " + measure.name);
+            values.add("Average " + measure.toString());
+            values.add("Errors " + measure.toString());
         }
         printer.printRecord(values);
     }
