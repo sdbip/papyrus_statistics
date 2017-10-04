@@ -19,7 +19,7 @@ class CSVOutputTaget implements OutputTarget {
     }
 
     @Override
-    public void writeHeaders(Measure... measures) throws IOException {
+    public void writeHeaders(final Iterable<Measure> measures) throws IOException {
         final List<String> values = new ArrayList<>();
         values.add("Process step");
         for (final Measure measure : measures) {

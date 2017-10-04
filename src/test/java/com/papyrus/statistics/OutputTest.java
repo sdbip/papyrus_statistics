@@ -3,7 +3,7 @@ package com.papyrus.statistics;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.*;
 
 import static org.junit.Assert.assertEquals;
 
@@ -13,13 +13,27 @@ public class OutputTest {
     @Test
     public void outputsHeaders() throws IOException {
         final CalculatedData calculatedData = new CalculatedData();
-        calculatedData.totalErrorsByMeasure.put(TestMeasures.duration, 30);
+        calculatedData.totalErrorsByMeasure.put(TestMeasures.duration, 0);
 
         final Output output = new Output(testTarget);
         output.output(calculatedData);
 
-        assertEquals(1, testTarget.writtenHeaders.length);
-        assertEquals(TestMeasures.duration, testTarget.writtenHeaders[0]);
+        assertEquals(Collections.singletonList(TestMeasures.duration), testTarget.writtenHeaders);
+    }
+
+    @Test
+    public void outputsHeadersForMultipleMeasures() throws IOException {
+        final CalculatedData calculatedData = new CalculatedData();
+        calculatedData.totalErrorsByMeasure.put(TestMeasures.duration, 0);
+        calculatedData.totalErrorsByMeasure.put(TestMeasures.fuel, 0);
+
+        final Output output = new Output(testTarget);
+        output.output(calculatedData);
+
+        final List<Measure> headers = new ArrayList<>();
+        testTarget.writtenHeaders.forEach(headers::add);
+
+        assertEquals(2, headers.size());
     }
 
     @Test

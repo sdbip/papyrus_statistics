@@ -4,12 +4,12 @@ import java.io.IOException;
 
 class TestTarget implements OutputTarget {
     boolean isClosed;
-    Measure[] writtenHeaders;
+    Iterable<Measure> writtenHeaders;
     Step lastWrittenStep;
     CalculatedEntry[] lastWrittenEntries;
 
     @Override
-    public void writeHeaders(final Measure... measures) throws IOException {
+    public void writeHeaders(final Iterable<Measure> measures) throws IOException {
         writtenHeaders = measures;
     }
 
