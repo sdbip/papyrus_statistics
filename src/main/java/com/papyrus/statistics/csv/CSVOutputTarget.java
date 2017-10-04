@@ -36,12 +36,16 @@ public class CSVOutputTarget implements OutputTarget {
     @Override
     public void write(final Step step, final Iterable<CollectedEntry> entries) throws IOException {
         final List<String> values = new ArrayList<>();
-        values.add(step.name);
+        values.add(step.toString());
         for (final CollectedEntry entry : entries) {
-            values.add(Double.toString(entry.total / entry.count));
+            values.add(Double.toString(getAverage(entry)));
             values.add(Integer.toString(entry.errors));
         }
         printer.printRecord(values);
+    }
+
+    private double getAverage(final CollectedEntry entry) {
+        return entry.count == 0 ? 0 : entry.total / entry.count;
     }
 
     @Override

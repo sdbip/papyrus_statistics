@@ -23,10 +23,14 @@ public final class Output {
         for (final Step step : steps) {
             final List<CollectedEntry> entries = new ArrayList<>();
             for (final Measure measure : measures) {
-                entries.add(collectedData.entries.get(step).get(measure));
+                final CollectedEntry entry = collectedData.entries.get(step).get(measure);
+                if (entry != null) entries.add(entry);
+                else entries.add(new CollectedEntry(0, 0, 0));
             }
             target.write(step, entries);
         }
+
+        target.close();
     }
 
     private List<Measure> getMeasures(final Map<Measure, Integer> map) {
