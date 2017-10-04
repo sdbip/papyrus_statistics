@@ -30,7 +30,7 @@ class CSVOutputTaget implements OutputTarget {
     }
 
     @Override
-    public void write(Step step, CalculatedEntry... entries) throws IOException {
+    public void write(final Step step, final Iterable<CalculatedEntry> entries) throws IOException {
         final List<String> values = new ArrayList<>();
         values.add(step.name);
         for (final CalculatedEntry entry : entries) {

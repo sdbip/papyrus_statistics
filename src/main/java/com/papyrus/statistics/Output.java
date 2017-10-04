@@ -16,8 +16,11 @@ class Output {
 
         final Set<Step> steps = calculatedData.entries.keySet();
         for (final Step step : steps) {
-            for (final Measure measure : measures)
-                target.write(step, calculatedData.entries.get(step).get(measure));
+            final List<CalculatedEntry> entries = new ArrayList<>();
+            for (final Measure measure : getMeasures(calculatedData.totalErrorsByMeasure)) {
+                entries.add(calculatedData.entries.get(step).get(measure));
+            }
+            target.write(step, entries);
         }
     }
 

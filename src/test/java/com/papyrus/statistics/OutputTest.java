@@ -60,8 +60,33 @@ public class OutputTest {
         final Output output = new Output(testTarget);
         output.output(calculatedData);
 
-        assertEquals(1, testTarget.lastWrittenEntries.length);
-        assertEquals(9.0, testTarget.lastWrittenEntries[0].average, 0.001);
-        assertEquals(30, testTarget.lastWrittenEntries[0].errors);
+        final List<CalculatedEntry> entries = new ArrayList<>();
+        testTarget.lastWrittenEntries.forEach(entries::add);
+
+        assertEquals(1, entries.size());
+        assertEquals(9.0, entries.get(0).average, 0.001);
+        assertEquals(30, entries.get(0).errors);
+    }
+
+    @Test
+    public void outputsRowsForMultipleMeasures() throws IOException {
+        final CalculatedData calculatedData = new CalculatedData();
+        calculatedData.totalErrorsByMeasure.put(TestMeasures.duration, 0);
+        calculatedData.totalErrorsByMeasure.put(TestMeasures.fuel, 0);
+        calculatedData.entries.put(TestSteps.picking, new HashMap<>());
+        calculatedData.entries.get(TestSteps.picking).put(
+                TestMeasures.duration,
+                new CalculatedEntry(9.0, 30));
+        calculatedData.entries.get(TestSteps.picking).put(
+                TestMeasures.fuel,
+                new CalculatedEntry(8.7, 10));
+
+        final Output output = new Output(testTarget);
+        output.output(calculatedData);
+
+        final List<CalculatedEntry> entries = new ArrayList<>();
+        testTarget.lastWrittenEntries.forEach(entries::add);
+
+        assertEquals(2, entries.size());
     }
 }

@@ -17,8 +17,8 @@ public class CSVOutputTest {
         final CSVOutputTaget output = new CSVOutputTaget(outputStream);
 
         output.writeHeaders(Collections.singletonList(TestMeasures.duration));
-        output.write(TestSteps.picking, new CalculatedEntry(8.7, 11));
-        output.write(TestSteps.loading, new CalculatedEntry(5.6, 23));
+        output.write(TestSteps.picking, Collections.singletonList(new CalculatedEntry(8.7, 11)));
+        output.write(TestSteps.loading, Collections.singletonList(new CalculatedEntry(5.6, 23)));
         output.close();
 
         assertEquals(
