@@ -16,14 +16,14 @@ import static org.junit.Assert.assertFalse;
 public class CSVInputTest {
     @Test
     public void parsesExcelCSV() throws IOException {
-        final CSVSource source = createCSVSource(
+        final CSVInputSource source = createCSVSource(
                 "Process Step;Measure;Value\n" +
                 "Picking;Duration;9.0\n");
 
-        final List<CollectedEntry> entries = getCollectedEntries(source);
+        final List<InputEntry> entries = getCollectedEntries(source);
 
         assertEquals(1, entries.size());
-        final CollectedEntry entry = entries.get(0);
+        final InputEntry entry = entries.get(0);
         assertEquals(new Measurement(TestSteps.picking, TestMeasures.duration), entry.measurement);
         assertFalse(entry.isError);
         assertEquals(9.0, entry.value, 0.001);
@@ -31,14 +31,14 @@ public class CSVInputTest {
 
     @Test
     public void parsesErrors() throws IOException {
-        final CSVSource source = createCSVSource(
+        final CSVInputSource source = createCSVSource(
                 "Process Step;Measure;Value\n" +
                 "Picking;Duration;ERROR\n");
 
-        final List<CollectedEntry> entries = getCollectedEntries(source);
+        final List<InputEntry> entries = getCollectedEntries(source);
 
         assertEquals(1, entries.size());
-        final CollectedEntry entry = entries.get(0);
+        final InputEntry entry = entries.get(0);
         assertEquals(new Measurement(TestSteps.picking, TestMeasures.duration), entry.measurement);
         assertTrue(entry.isError);
     }
@@ -46,12 +46,12 @@ public class CSVInputTest {
     @Test
     public void parsesSampleCSV() throws IOException {
         final InputStream inputStream = openResource("test_data_java_exercise.csv");
-        final CSVSource source = new CSVSource(inputStream);
+        final CSVInputSource source = new CSVInputSource(inputStream);
 
-        final List<CollectedEntry> entries = getCollectedEntries(source);
+        final List<InputEntry> entries = getCollectedEntries(source);
 
         assertEquals(999, entries.size());
-        final CollectedEntry entry = entries.get(0);
+        final InputEntry entry = entries.get(0);
         assertEquals(new Measurement(new Step("Shipping"), new Measure("Stops")), entry.measurement);
         assertFalse(entry.isError);
         assertEquals(7.0, entry.value, 0.001);
@@ -63,13 +63,13 @@ public class CSVInputTest {
         return resource == null ? null : resource.openStream();
     }
 
-    private CSVSource createCSVSource(String csv) throws IOException {
+    private CSVInputSource createCSVSource(String csv) throws IOException {
         final ByteArrayInputStream inputStream = new ByteArrayInputStream(csv.getBytes());
-        return new CSVSource(inputStream);
+        return new CSVInputSource(inputStream);
     }
 
-    private List<CollectedEntry> getCollectedEntries(CSVSource source) {
-        final List<CollectedEntry> entries = new ArrayList<>();
+    private List<InputEntry> getCollectedEntries(CSVInputSource source) {
+        final List<InputEntry> entries = new ArrayList<>();
         source.entries().forEach(entries::add);
         return entries;
     }

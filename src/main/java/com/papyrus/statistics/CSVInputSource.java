@@ -9,26 +9,26 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.util.Iterator;
 
-class CSVSource implements Source {
+class CSVInputSource implements InputSource {
     private static final CSVFormat EXCEL_FORMAT = CSVFormat.EXCEL.withHeader().withDelimiter(';');
     private final CSVParser parser;
 
-    CSVSource(final InputStream stream) throws IOException {
+    CSVInputSource(final InputStream stream) throws IOException {
         final InputStreamReader reader = new InputStreamReader(stream);
         parser = EXCEL_FORMAT.parse(reader);
     }
 
     @Override
-    public Iterable<CollectedEntry> entries() {
+    public Iterable<InputEntry> entries() {
         final Iterator<CSVRecord> recordIterator = parser.iterator();
-        return () -> new Iterator<CollectedEntry>() {
+        return () -> new Iterator<InputEntry>() {
             @Override
             public boolean hasNext() {
                 return recordIterator.hasNext();
             }
 
             @Override
-            public CollectedEntry next() {
+            public InputEntry next() {
                 final CSVRecord record = recordIterator.next();
                 final Measurement measurement = new Measurement(
                         new Step(record.get(0)),
@@ -36,9 +36,9 @@ class CSVSource implements Source {
                 );
                 final Double value = parseDouble(record.get(2));
                 if (value == null) {
-                    return CollectedEntry.error(measurement);
+                    return InputEntry.error(measurement);
                 } else {
-                    return new CollectedEntry(measurement, value);
+                    return new InputEntry(measurement, value);
                 }
             }
         };

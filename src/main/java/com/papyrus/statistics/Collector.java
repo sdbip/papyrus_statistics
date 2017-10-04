@@ -4,16 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 
 class Collector {
-    private final Source source;
+    private final InputSource source;
 
-    Collector(final Source source) {
+    Collector(final InputSource source) {
         this.source = source;
     }
 
     CollectedData collect() {
         final CollectedData collectedData = new CollectedData();
 
-        for (final CollectedEntry entry : source.entries()) {
+        for (final InputEntry entry : source.entries()) {
             if (entry.isError) {
                 final Integer errorsBefore = collectedData.totalErrorsByMeasure.get(entry.measurement.measure);
                 collectedData.totalErrorsByMeasure.put(entry.measurement.measure, errorsBefore == null ? 1 : errorsBefore + 1);

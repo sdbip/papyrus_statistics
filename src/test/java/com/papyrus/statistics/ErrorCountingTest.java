@@ -9,12 +9,12 @@ import static org.junit.Assert.assertEquals;
 
 public final class ErrorCountingTest {
     private final Measurement defaultMeasurement = new Measurement(TestSteps.picking, TestMeasures.duration);
-    private final TestSource testSource = new TestSource();
+    private final TestInputSource testSource = new TestInputSource();
     private final Collector collector = new Collector(testSource);
 
     @Test
     public void countsSingleError() {
-        testSource.entries = Collections.singletonList(CollectedEntry.error(defaultMeasurement));
+        testSource.entries = Collections.singletonList(InputEntry.error(defaultMeasurement));
 
         final CollectedData collectedData = collector.collect();
 
@@ -24,8 +24,8 @@ public final class ErrorCountingTest {
     @Test
     public void countsMultipleErrors() {
         testSource.entries = Arrays.asList(
-                CollectedEntry.error(defaultMeasurement),
-                CollectedEntry.error(defaultMeasurement));
+                InputEntry.error(defaultMeasurement),
+                InputEntry.error(defaultMeasurement));
 
         final CollectedData collectedData = collector.collect();
 
@@ -35,9 +35,9 @@ public final class ErrorCountingTest {
     @Test
     public void onlyAddsErrorsWithSameStepAndMeasure() {
         testSource.entries = Arrays.asList(
-                CollectedEntry.error(defaultMeasurement),
-                CollectedEntry.error(new Measurement(TestSteps.other, defaultMeasurement.measure)),
-                CollectedEntry.error(new Measurement(defaultMeasurement.step, TestMeasures.other)));
+                InputEntry.error(defaultMeasurement),
+                InputEntry.error(new Measurement(TestSteps.other, defaultMeasurement.measure)),
+                InputEntry.error(new Measurement(defaultMeasurement.step, TestMeasures.other)));
 
         final CollectedData collectedData = collector.collect();
 
@@ -47,8 +47,8 @@ public final class ErrorCountingTest {
     @Test
     public void calculatesTotalNumberOfErrorsPerMeasure() {
         testSource.entries = Arrays.asList(
-                CollectedEntry.error(defaultMeasurement),
-                CollectedEntry.error(new Measurement(TestSteps.other, defaultMeasurement.measure)));
+                InputEntry.error(defaultMeasurement),
+                InputEntry.error(new Measurement(TestSteps.other, defaultMeasurement.measure)));
 
         final CollectedData collectedData = collector.collect();
 

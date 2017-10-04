@@ -7,7 +7,7 @@ public class Program {
         System.out.println("program running");
 
         final InputStream inputStream = new FileInputStream(args[0]);
-        final Source source = new CSVSource(inputStream);
+        final InputSource source = new CSVInputSource(inputStream);
         final Collector collector = new Collector(source);
         final CollectedData collectedData = collector.collect();
 
