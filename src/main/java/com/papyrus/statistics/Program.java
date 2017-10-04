@@ -12,7 +12,7 @@ public class Program {
         final CalculatedData calculatedData = collector.collect();
 
         final OutputStream outputStream = new FileOutputStream(args[1]);
-        final OutputTarget target = new CSVOutputTaget(outputStream);
+        final OutputTarget target = new CSVOutputTarget(outputStream);
         final Output output = new Output(target);
         output.output(calculatedData);
     }

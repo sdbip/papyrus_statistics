@@ -13,7 +13,7 @@ public class CSVOutputTest {
     @Test
     public void outputsDataInAUsefulFormat() throws IOException {
         final OutputStream outputStream = new ByteArrayOutputStream();
-        final CSVOutputTaget output = new CSVOutputTaget(outputStream);
+        final CSVOutputTarget output = new CSVOutputTarget(outputStream);
 
         output.writeHeaders(Collections.singletonList(TestMeasures.duration));
         output.write(TestSteps.picking, Collections.singletonList(new CalculatedEntry(8.7, 1, 11)));

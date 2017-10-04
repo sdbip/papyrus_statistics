@@ -9,12 +9,12 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-class CSVOutputTaget implements OutputTarget {
+class CSVOutputTarget implements OutputTarget {
     private final static CSVFormat EXCEL_FORMAT = CSVFormat.EXCEL.withDelimiter(';');
 
     private final CSVPrinter printer;
 
-    CSVOutputTaget(final OutputStream stream) throws IOException {
+    CSVOutputTarget(final OutputStream stream) throws IOException {
         printer = new CSVPrinter(new OutputStreamWriter(stream), EXCEL_FORMAT);
     }
 
