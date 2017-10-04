@@ -24,7 +24,8 @@ public class CSVInputTest {
 
         assertEquals(1, entries.size());
         final InputEntry entry = entries.get(0);
-        assertEquals(new Measurement(TestSteps.picking, TestMeasures.duration), entry.measurement);
+        assertEquals(TestSteps.picking, entry.step);
+        assertEquals(TestMeasures.duration, entry.measure);
         assertFalse(entry.isError);
         assertEquals(9.0, entry.value, 0.001);
     }
@@ -39,7 +40,8 @@ public class CSVInputTest {
 
         assertEquals(1, entries.size());
         final InputEntry entry = entries.get(0);
-        assertEquals(new Measurement(TestSteps.picking, TestMeasures.duration), entry.measurement);
+        assertEquals(TestSteps.picking, entry.step);
+        assertEquals(TestMeasures.duration, entry.measure);
         assertTrue(entry.isError);
     }
 
@@ -52,7 +54,8 @@ public class CSVInputTest {
 
         assertEquals(999, entries.size());
         final InputEntry entry = entries.get(0);
-        assertEquals(new Measurement(new Step("Shipping"), new Measure("Stops")), entry.measurement);
+        assertEquals(new Step("Shipping"), entry.step);
+        assertEquals(new Measure("Stops"), entry.measure);
         assertFalse(entry.isError);
         assertEquals(7.0, entry.value, 0.001);
     }

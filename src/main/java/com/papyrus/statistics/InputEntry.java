@@ -1,20 +1,22 @@
 package com.papyrus.statistics;
 
 final class InputEntry {
-    final Measurement measurement;
+    final Step step;
+    final Measure measure;
     final boolean isError;
     final double value;
 
-    static InputEntry error(Measurement measurement) {
-        return new InputEntry(measurement, true, 0);
+    static InputEntry error(final Step step, final Measure measure) {
+        return new InputEntry(step, measure, true, 0);
     }
 
-    InputEntry(Measurement measurement, double value) {
-        this(measurement, false, value);
+    InputEntry(final Step step, final Measure measure, final double value) {
+        this(step, measure, false, value);
     }
 
-    private InputEntry(Measurement measurement, boolean isError, double value) {
-        this.measurement = measurement;
+    private InputEntry(final Step step, final Measure measure, final boolean isError, final double value) {
+        this.step = step;
+        this.measure = measure;
         this.isError = isError;
         this.value = value;
     }

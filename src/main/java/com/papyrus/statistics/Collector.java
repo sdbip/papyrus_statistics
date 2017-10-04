@@ -15,28 +15,28 @@ class Collector {
 
         for (final InputEntry entry : source.entries()) {
             if (entry.isError) {
-                final Integer errorsBefore = collectedData.totalErrorsByMeasure.get(entry.measurement.measure);
-                collectedData.totalErrorsByMeasure.put(entry.measurement.measure, errorsBefore == null ? 1 : errorsBefore + 1);
+                final Integer errorsBefore = collectedData.totalErrorsByMeasure.get(entry.measure);
+                collectedData.totalErrorsByMeasure.put(entry.measure, errorsBefore == null ? 1 : errorsBefore + 1);
 
-                final Map<Measure, CollectedEntry> entriesForStep = collectedData.entries.computeIfAbsent(entry.measurement.step, k -> new HashMap<>());
-                CollectedEntry collectedEntry = entriesForStep.get(entry.measurement.measure);
+                final Map<Measure, CollectedEntry> entriesForStep = collectedData.entries.computeIfAbsent(entry.step, k -> new HashMap<>());
+                CollectedEntry collectedEntry = entriesForStep.get(entry.measure);
                 if (collectedEntry == null) {
                     collectedEntry = new CollectedEntry(0, 0, 1);
-                    entriesForStep.put(entry.measurement.measure, collectedEntry);
+                    entriesForStep.put(entry.measure, collectedEntry);
                 } else {
                     collectedEntry = new CollectedEntry(collectedEntry.total, collectedEntry.count, collectedEntry.errors + 1);
-                    entriesForStep.put(entry.measurement.measure, collectedEntry);
+                    entriesForStep.put(entry.measure, collectedEntry);
                 }
             }
             else {
-                final Map<Measure, CollectedEntry> entriesForStep = collectedData.entries.computeIfAbsent(entry.measurement.step, k -> new HashMap<>());
-                CollectedEntry collectedEntry = entriesForStep.get(entry.measurement.measure);
+                final Map<Measure, CollectedEntry> entriesForStep = collectedData.entries.computeIfAbsent(entry.step, k -> new HashMap<>());
+                CollectedEntry collectedEntry = entriesForStep.get(entry.measure);
                 if (collectedEntry == null) {
                     collectedEntry = new CollectedEntry(entry.value, 1, 0);
-                    entriesForStep.put(entry.measurement.measure, collectedEntry);
+                    entriesForStep.put(entry.measure, collectedEntry);
                 } else {
                     collectedEntry = new CollectedEntry(collectedEntry.total + entry.value, collectedEntry.count + 1, 0);
-                    entriesForStep.put(entry.measurement.measure, collectedEntry);
+                    entriesForStep.put(entry.measure, collectedEntry);
                 }
             }
         }

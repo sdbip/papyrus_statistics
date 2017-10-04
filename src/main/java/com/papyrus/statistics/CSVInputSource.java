@@ -30,15 +30,13 @@ class CSVInputSource implements InputSource {
             @Override
             public InputEntry next() {
                 final CSVRecord record = recordIterator.next();
-                final Measurement measurement = new Measurement(
-                        new Step(record.get(0)),
-                        new Measure(record.get(1))
-                );
+                final Step step = new Step(record.get(0));
+                final Measure measure = new Measure(record.get(1));
                 final Double value = parseDouble(record.get(2));
                 if (value == null) {
-                    return InputEntry.error(measurement);
+                    return InputEntry.error(step, measure);
                 } else {
-                    return new InputEntry(measurement, value);
+                    return new InputEntry(step, measure, value);
                 }
             }
         };
