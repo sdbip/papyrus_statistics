@@ -10,15 +10,15 @@ class Collector {
         this.source = source;
     }
 
-    CalculatedData collect() {
-        final CalculatedData calculatedData = new CalculatedData();
+    CollectedData collect() {
+        final CollectedData collectedData = new CollectedData();
 
         for (final CollectedEntry entry : source.entries()) {
             if (entry.isError) {
-                final Integer errorsBefore = calculatedData.totalErrorsByMeasure.get(entry.measurement.measure);
-                calculatedData.totalErrorsByMeasure.put(entry.measurement.measure, errorsBefore == null ? 1 : errorsBefore + 1);
+                final Integer errorsBefore = collectedData.totalErrorsByMeasure.get(entry.measurement.measure);
+                collectedData.totalErrorsByMeasure.put(entry.measurement.measure, errorsBefore == null ? 1 : errorsBefore + 1);
 
-                final Map<Measure, CalculatedEntry> entriesForStep = calculatedData.entries.computeIfAbsent(entry.measurement.step, k -> new HashMap<>());
+                final Map<Measure, CalculatedEntry> entriesForStep = collectedData.entries.computeIfAbsent(entry.measurement.step, k -> new HashMap<>());
                 CalculatedEntry calculatedEntry = entriesForStep.get(entry.measurement.measure);
                 if (calculatedEntry == null) {
                     calculatedEntry = new CalculatedEntry(0, 0, 1);
@@ -29,7 +29,7 @@ class Collector {
                 }
             }
             else {
-                final Map<Measure, CalculatedEntry> entriesForStep = calculatedData.entries.computeIfAbsent(entry.measurement.step, k -> new HashMap<>());
+                final Map<Measure, CalculatedEntry> entriesForStep = collectedData.entries.computeIfAbsent(entry.measurement.step, k -> new HashMap<>());
                 CalculatedEntry calculatedEntry = entriesForStep.get(entry.measurement.measure);
                 if (calculatedEntry == null) {
                     calculatedEntry = new CalculatedEntry(entry.value, 1, 0);
@@ -41,6 +41,6 @@ class Collector {
             }
         }
 
-        return calculatedData;
+        return collectedData;
     }
 }

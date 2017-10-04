@@ -12,23 +12,23 @@ public class OutputTest {
 
     @Test
     public void outputsHeaders() throws IOException {
-        final CalculatedData calculatedData = new CalculatedData();
-        calculatedData.totalErrorsByMeasure.put(TestMeasures.duration, 0);
+        final CollectedData collectedData = new CollectedData();
+        collectedData.totalErrorsByMeasure.put(TestMeasures.duration, 0);
 
         final Output output = new Output(testTarget);
-        output.output(calculatedData);
+        output.output(collectedData);
 
         assertEquals(Collections.singletonList(TestMeasures.duration), testTarget.writtenHeaders);
     }
 
     @Test
     public void outputsHeadersForMultipleMeasures() throws IOException {
-        final CalculatedData calculatedData = new CalculatedData();
-        calculatedData.totalErrorsByMeasure.put(TestMeasures.duration, 0);
-        calculatedData.totalErrorsByMeasure.put(TestMeasures.fuel, 0);
+        final CollectedData collectedData = new CollectedData();
+        collectedData.totalErrorsByMeasure.put(TestMeasures.duration, 0);
+        collectedData.totalErrorsByMeasure.put(TestMeasures.fuel, 0);
 
         final Output output = new Output(testTarget);
-        output.output(calculatedData);
+        output.output(collectedData);
 
         final List<Measure> headers = new ArrayList<>();
         testTarget.writtenHeaders.forEach(headers::add);
@@ -38,27 +38,27 @@ public class OutputTest {
 
     @Test
     public void sortsHeadersByTotalErrors() throws IOException {
-        final CalculatedData calculatedData = new CalculatedData();
-        calculatedData.totalErrorsByMeasure.put(TestMeasures.duration, 30);
-        calculatedData.totalErrorsByMeasure.put(TestMeasures.fuel, 10);
+        final CollectedData collectedData = new CollectedData();
+        collectedData.totalErrorsByMeasure.put(TestMeasures.duration, 30);
+        collectedData.totalErrorsByMeasure.put(TestMeasures.fuel, 10);
 
         final Output output = new Output(testTarget);
-        output.output(calculatedData);
+        output.output(collectedData);
 
         assertEquals(Arrays.asList(TestMeasures.duration, TestMeasures.fuel), testTarget.writtenHeaders);
     }
 
     @Test
     public void outputsStatisticsPerStep() throws IOException {
-        final CalculatedData calculatedData = new CalculatedData();
-        calculatedData.totalErrorsByMeasure.put(TestMeasures.duration, 30);
-        calculatedData.entries.put(TestSteps.picking, new HashMap<>());
-        calculatedData.entries.get(TestSteps.picking).put(
+        final CollectedData collectedData = new CollectedData();
+        collectedData.totalErrorsByMeasure.put(TestMeasures.duration, 30);
+        collectedData.entries.put(TestSteps.picking, new HashMap<>());
+        collectedData.entries.get(TestSteps.picking).put(
                 TestMeasures.duration,
                 new CalculatedEntry(9.0, 1, 30));
 
         final Output output = new Output(testTarget);
-        output.output(calculatedData);
+        output.output(collectedData);
 
         final List<CalculatedEntry> entries = new ArrayList<>();
         testTarget.lastWrittenEntries.forEach(entries::add);
@@ -71,19 +71,19 @@ public class OutputTest {
 
     @Test
     public void outputsRowsForMultipleMeasures() throws IOException {
-        final CalculatedData calculatedData = new CalculatedData();
-        calculatedData.totalErrorsByMeasure.put(TestMeasures.duration, 0);
-        calculatedData.totalErrorsByMeasure.put(TestMeasures.fuel, 0);
-        calculatedData.entries.put(TestSteps.picking, new HashMap<>());
-        calculatedData.entries.get(TestSteps.picking).put(
+        final CollectedData collectedData = new CollectedData();
+        collectedData.totalErrorsByMeasure.put(TestMeasures.duration, 0);
+        collectedData.totalErrorsByMeasure.put(TestMeasures.fuel, 0);
+        collectedData.entries.put(TestSteps.picking, new HashMap<>());
+        collectedData.entries.get(TestSteps.picking).put(
                 TestMeasures.duration,
                 new CalculatedEntry(9.0, 1, 30));
-        calculatedData.entries.get(TestSteps.picking).put(
+        collectedData.entries.get(TestSteps.picking).put(
                 TestMeasures.fuel,
                 new CalculatedEntry(8.7, 1, 10));
 
         final Output output = new Output(testTarget);
-        output.output(calculatedData);
+        output.output(collectedData);
 
         final List<CalculatedEntry> entries = new ArrayList<>();
         testTarget.lastWrittenEntries.forEach(entries::add);

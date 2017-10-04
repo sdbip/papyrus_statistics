@@ -10,15 +10,15 @@ class Output {
         this.target = target;
     }
 
-    void output(final CalculatedData calculatedData) throws IOException {
-        final List<Measure> measures = getMeasures(calculatedData.totalErrorsByMeasure);
+    void output(final CollectedData collectedData) throws IOException {
+        final List<Measure> measures = getMeasures(collectedData.totalErrorsByMeasure);
         target.writeHeaders(measures);
 
-        final Set<Step> steps = calculatedData.entries.keySet();
+        final Set<Step> steps = collectedData.entries.keySet();
         for (final Step step : steps) {
             final List<CalculatedEntry> entries = new ArrayList<>();
             for (final Measure measure : measures) {
-                entries.add(calculatedData.entries.get(step).get(measure));
+                entries.add(collectedData.entries.get(step).get(measure));
             }
             target.write(step, entries);
         }

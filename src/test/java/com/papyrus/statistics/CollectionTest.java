@@ -16,10 +16,10 @@ public final class CollectionTest {
     public void collectsSingleValue() {
         testSource.entries = Collections.singletonList(new CollectedEntry(defaultMeasurement, 9.0));
 
-        final CalculatedData calculatedData = collector.collect();
+        final CollectedData collectedData = collector.collect();
 
-        assertEquals(9.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).total, 0.001);
-        assertEquals(1, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).count);
+        assertEquals(9.0, collectedData.entries.get(TestSteps.picking).get(TestMeasures.duration).total, 0.001);
+        assertEquals(1, collectedData.entries.get(TestSteps.picking).get(TestMeasures.duration).count);
     }
 
     @Test
@@ -28,10 +28,10 @@ public final class CollectionTest {
                 new CollectedEntry(defaultMeasurement, 9.0),
                 new CollectedEntry(defaultMeasurement, 11.0));
 
-        final CalculatedData calculatedData = collector.collect();
+        final CollectedData collectedData = collector.collect();
 
-        assertEquals(20.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).total, 0.001);
-        assertEquals(2, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).count);
+        assertEquals(20.0, collectedData.entries.get(TestSteps.picking).get(TestMeasures.duration).total, 0.001);
+        assertEquals(2, collectedData.entries.get(TestSteps.picking).get(TestMeasures.duration).count);
     }
 
     @Test
@@ -41,9 +41,9 @@ public final class CollectionTest {
                 new CollectedEntry(new Measurement(TestSteps.other, defaultMeasurement.measure), 11.0),
                 new CollectedEntry(new Measurement(defaultMeasurement.step, TestMeasures.other), 11.0));
 
-        final CalculatedData calculatedData = collector.collect();
+        final CollectedData collectedData = collector.collect();
 
-        assertEquals(9.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).total, 0.001);
-        assertEquals(1, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).count);
+        assertEquals(9.0, collectedData.entries.get(TestSteps.picking).get(TestMeasures.duration).total, 0.001);
+        assertEquals(1, collectedData.entries.get(TestSteps.picking).get(TestMeasures.duration).count);
     }
 }

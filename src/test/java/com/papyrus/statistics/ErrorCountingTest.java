@@ -16,9 +16,9 @@ public final class ErrorCountingTest {
     public void countsSingleError() {
         testSource.entries = Collections.singletonList(CollectedEntry.error(defaultMeasurement));
 
-        final CalculatedData calculatedData = collector.collect();
+        final CollectedData collectedData = collector.collect();
 
-        assertEquals(1, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).errors);
+        assertEquals(1, collectedData.entries.get(TestSteps.picking).get(TestMeasures.duration).errors);
     }
 
     @Test
@@ -27,9 +27,9 @@ public final class ErrorCountingTest {
                 CollectedEntry.error(defaultMeasurement),
                 CollectedEntry.error(defaultMeasurement));
 
-        final CalculatedData calculatedData = collector.collect();
+        final CollectedData collectedData = collector.collect();
 
-        assertEquals(2, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).errors);
+        assertEquals(2, collectedData.entries.get(TestSteps.picking).get(TestMeasures.duration).errors);
     }
 
     @Test
@@ -39,9 +39,9 @@ public final class ErrorCountingTest {
                 CollectedEntry.error(new Measurement(TestSteps.other, defaultMeasurement.measure)),
                 CollectedEntry.error(new Measurement(defaultMeasurement.step, TestMeasures.other)));
 
-        final CalculatedData calculatedData = collector.collect();
+        final CollectedData collectedData = collector.collect();
 
-        assertEquals(1, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).errors);
+        assertEquals(1, collectedData.entries.get(TestSteps.picking).get(TestMeasures.duration).errors);
     }
 
     @Test
@@ -50,8 +50,8 @@ public final class ErrorCountingTest {
                 CollectedEntry.error(defaultMeasurement),
                 CollectedEntry.error(new Measurement(TestSteps.other, defaultMeasurement.measure)));
 
-        final CalculatedData calculatedData = collector.collect();
+        final CollectedData collectedData = collector.collect();
 
-        assertEquals(2, calculatedData.totalErrorsByMeasure.get(TestMeasures.duration).intValue());
+        assertEquals(2, collectedData.totalErrorsByMeasure.get(TestMeasures.duration).intValue());
     }
 }
