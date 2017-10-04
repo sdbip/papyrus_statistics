@@ -2,7 +2,7 @@ package com.papyrus.statistics.csv;
 
 import com.papyrus.statistics.CollectedEntry;
 import com.papyrus.statistics.Measure;
-import com.papyrus.statistics.OutputTarget;
+import com.papyrus.statistics.output.OutputTarget;
 import com.papyrus.statistics.Step;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVPrinter;

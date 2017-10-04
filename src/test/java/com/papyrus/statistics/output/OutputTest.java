@@ -1,5 +1,6 @@
-package com.papyrus.statistics;
+package com.papyrus.statistics.output;
 
+import com.papyrus.statistics.*;
 import org.junit.Test;
 
 import java.io.IOException;

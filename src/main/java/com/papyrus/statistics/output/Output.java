@@ -1,16 +1,21 @@
-package com.papyrus.statistics;
+package com.papyrus.statistics.output;
+
+import com.papyrus.statistics.CollectedData;
+import com.papyrus.statistics.CollectedEntry;
+import com.papyrus.statistics.Measure;
+import com.papyrus.statistics.Step;
 
 import java.io.IOException;
 import java.util.*;
 
-class Output {
+public final class Output {
     private final OutputTarget target;
 
-    Output(final OutputTarget target) {
+    public Output(final OutputTarget target) {
         this.target = target;
     }
 
-    void output(final CollectedData collectedData) throws IOException {
+    public void output(final CollectedData collectedData) throws IOException {
         final List<Measure> measures = getMeasures(collectedData.totalErrorsByMeasure);
         target.writeHeaders(measures);
 

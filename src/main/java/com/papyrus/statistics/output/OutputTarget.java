@@ -1,4 +1,8 @@
-package com.papyrus.statistics;
+package com.papyrus.statistics.output;
+
+import com.papyrus.statistics.CollectedEntry;
+import com.papyrus.statistics.Measure;
+import com.papyrus.statistics.Step;
 
 import java.io.IOException;
 

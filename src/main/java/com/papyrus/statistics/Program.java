@@ -4,6 +4,8 @@ import com.papyrus.statistics.csv.CSVInputSource;
 import com.papyrus.statistics.csv.CSVOutputTarget;
 import com.papyrus.statistics.input.Collector;
 import com.papyrus.statistics.input.InputSource;
+import com.papyrus.statistics.output.Output;
+import com.papyrus.statistics.output.OutputTarget;
 
 import java.io.*;
 

@@ -1,8 +1,13 @@
-package com.papyrus.statistics;
+package com.papyrus.statistics.output;
+
+import com.papyrus.statistics.CollectedEntry;
+import com.papyrus.statistics.Measure;
+import com.papyrus.statistics.Step;
+import com.papyrus.statistics.output.OutputTarget;
 
 import java.io.IOException;
 
-class TestTarget implements OutputTarget {
+public final class TestTarget implements OutputTarget {
     boolean isClosed;
     Iterable<Measure> writtenHeaders;
     Step lastWrittenStep;
