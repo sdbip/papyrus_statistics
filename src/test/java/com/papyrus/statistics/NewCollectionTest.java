@@ -1,0 +1,46 @@
+package com.papyrus.statistics;
+
+import org.junit.Test;
+
+import java.util.Arrays;
+import java.util.Collections;
+
+import static org.junit.Assert.assertEquals;
+
+public final class NewCollectionTest {
+    private final Measurement defaultMeasurement = new Measurement(TestSteps.picking, TestMeasures.duration);
+    private final TestSource testSource = new TestSource();
+    private final NewCollector collector = new NewCollector(testSource);
+
+    @Test
+    public void collectsSingleValue() {
+        testSource.entries = Collections.singletonList(new CollectedEntry(defaultMeasurement, 9.0));
+
+        final CalculatedData calculatedData = collector.collect();
+
+        assertEquals(9.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).average, 0.001);
+    }
+
+    @Test
+    public void collectsMultipleValues() {
+        testSource.entries = Arrays.asList(
+                new CollectedEntry(defaultMeasurement, 9.0),
+                new CollectedEntry(defaultMeasurement, 11.0));
+
+        final CalculatedData calculatedData = collector.collect();
+
+        assertEquals(10.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).average, 0.001);
+    }
+
+    @Test
+    public void onlyAddsValuesWithSameStepAndMeasure() {
+        testSource.entries = Arrays.asList(
+                new CollectedEntry(defaultMeasurement, 9.0),
+                new CollectedEntry(new Measurement(TestSteps.other, defaultMeasurement.measure), 11.0),
+                new CollectedEntry(new Measurement(defaultMeasurement.step, TestMeasures.other), 11.0));
+
+        final CalculatedData calculatedData = collector.collect();
+
+        assertEquals(9.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).average, 0.001);
+    }
+}
