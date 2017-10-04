@@ -6,6 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Collector {
+    private final CollectedData collectedData = new CollectedData();
     private final InputSource source;
 
     public Collector(final InputSource source) {
@@ -13,25 +14,31 @@ public class Collector {
     }
 
     public CollectedData collect() {
-        final CollectedData collectedData = new CollectedData();
-
         for (final InputEntry entry : source.entries()) {
-            final Map<Measure, CollectedEntry> entriesForStep = collectedData.entries.computeIfAbsent(entry.step, k -> new HashMap<>());
-            CollectedEntry collectedEntry = entriesForStep.get(entry.measure);
-            if (collectedEntry == null) {
-                collectedEntry = new CollectedEntry(0, 0, 0);
-            }
-            final CollectedEntry changedEntry = entry.isError ?
-                    new CollectedEntry(collectedEntry.total, collectedEntry.count, collectedEntry.errors + 1) :
-                    new CollectedEntry(collectedEntry.total + entry.value, collectedEntry.count + 1, 0);
-            entriesForStep.put(entry.measure, changedEntry);
-
-            if (entry.isError) {
-                final Integer errorsBefore = collectedData.totalErrorsByMeasure.get(entry.measure);
-                collectedData.totalErrorsByMeasure.put(entry.measure, errorsBefore == null ? 1 : errorsBefore + 1);
-            }
+            addToStepInfo(entry);
+            if (entry.isError)
+                incrementTotalErrors(entry.measure);
         }
 
         return collectedData;
+    }
+
+    private void addToStepInfo(InputEntry entry) {
+        final Map<Measure, CollectedEntry> entriesForStep = collectedData.entries.computeIfAbsent(entry.step, k -> new HashMap<>());
+        final CollectedEntry oldEntry = getCollectedEntry(entry.measure, entriesForStep);
+        final CollectedEntry changedEntry = entry.isError ?
+                new CollectedEntry(oldEntry.total, oldEntry.count, oldEntry.errors + 1) :
+                new CollectedEntry(oldEntry.total + entry.value, oldEntry.count + 1, 0);
+        entriesForStep.put(entry.measure, changedEntry);
+    }
+
+    private void incrementTotalErrors(final Measure measure) {
+        final Integer errorsBefore = collectedData.totalErrorsByMeasure.get(measure);
+        collectedData.totalErrorsByMeasure.put(measure, errorsBefore == null ? 1 : errorsBefore + 1);
+    }
+
+    private CollectedEntry getCollectedEntry(final Measure measure, final Map<Measure, CollectedEntry> entries) {
+        final CollectedEntry collectedEntry = entries.get(measure);
+        return collectedEntry == null ? new CollectedEntry(0, 0, 0) : collectedEntry;
     }
 }
