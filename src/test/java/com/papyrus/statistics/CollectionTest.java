@@ -18,7 +18,8 @@ public final class CollectionTest {
 
         final CalculatedData calculatedData = collector.collect();
 
-        assertEquals(9.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).average, 0.001);
+        assertEquals(9.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).total, 0.001);
+        assertEquals(1, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).count);
     }
 
     @Test
@@ -29,7 +30,8 @@ public final class CollectionTest {
 
         final CalculatedData calculatedData = collector.collect();
 
-        assertEquals(10.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).average, 0.001);
+        assertEquals(20.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).total, 0.001);
+        assertEquals(2, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).count);
     }
 
     @Test
@@ -41,6 +43,7 @@ public final class CollectionTest {
 
         final CalculatedData calculatedData = collector.collect();
 
-        assertEquals(9.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).average, 0.001);
+        assertEquals(9.0, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).total, 0.001);
+        assertEquals(1, calculatedData.entries.get(TestSteps.picking).get(TestMeasures.duration).count);
     }
 }

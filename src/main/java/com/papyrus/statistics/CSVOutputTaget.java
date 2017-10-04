@@ -34,7 +34,7 @@ class CSVOutputTaget implements OutputTarget {
         final List<String> values = new ArrayList<>();
         values.add(step.name);
         for (final CalculatedEntry entry : entries) {
-            values.add(Double.toString(entry.average));
+            values.add(Double.toString(entry.total / entry.count));
             values.add(Integer.toString(entry.errors));
         }
         printer.printRecord(values);

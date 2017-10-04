@@ -55,7 +55,7 @@ public class OutputTest {
         calculatedData.entries.put(TestSteps.picking, new HashMap<>());
         calculatedData.entries.get(TestSteps.picking).put(
                 TestMeasures.duration,
-                new CalculatedEntry(9.0, 30));
+                new CalculatedEntry(9.0, 1, 30));
 
         final Output output = new Output(testTarget);
         output.output(calculatedData);
@@ -64,7 +64,8 @@ public class OutputTest {
         testTarget.lastWrittenEntries.forEach(entries::add);
 
         assertEquals(1, entries.size());
-        assertEquals(9.0, entries.get(0).average, 0.001);
+        assertEquals(9.0, entries.get(0).total, 0.001);
+        assertEquals(1, entries.get(0).count);
         assertEquals(30, entries.get(0).errors);
     }
 
@@ -76,10 +77,10 @@ public class OutputTest {
         calculatedData.entries.put(TestSteps.picking, new HashMap<>());
         calculatedData.entries.get(TestSteps.picking).put(
                 TestMeasures.duration,
-                new CalculatedEntry(9.0, 30));
+                new CalculatedEntry(9.0, 1, 30));
         calculatedData.entries.get(TestSteps.picking).put(
                 TestMeasures.fuel,
-                new CalculatedEntry(8.7, 10));
+                new CalculatedEntry(8.7, 1, 10));
 
         final Output output = new Output(testTarget);
         output.output(calculatedData);

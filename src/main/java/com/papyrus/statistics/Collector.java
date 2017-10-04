@@ -1,8 +1,6 @@
 package com.papyrus.statistics;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 class Collector {
@@ -13,61 +11,36 @@ class Collector {
     }
 
     CalculatedData collect() {
-        final CollectedData collectedData = new CollectedData();
+        final CalculatedData calculatedData = new CalculatedData();
+
         for (final CollectedEntry entry : source.entries()) {
             if (entry.isError) {
-                final Integer storedValue = collectedData.errors.get(entry.measurement);
-                final int before = storedValue == null ? 0 : storedValue;
-                collectedData.errors.put(entry.measurement, before + 1);
+                final Integer errorsBefore = calculatedData.totalErrorsByMeasure.get(entry.measurement.measure);
+                calculatedData.totalErrorsByMeasure.put(entry.measurement.measure, errorsBefore == null ? 1 : errorsBefore + 1);
+
+                final Map<Measure, CalculatedEntry> entriesForStep = calculatedData.entries.computeIfAbsent(entry.measurement.step, k -> new HashMap<>());
+                CalculatedEntry calculatedEntry = entriesForStep.get(entry.measurement.measure);
+                if (calculatedEntry == null) {
+                    calculatedEntry = new CalculatedEntry(0, 0, 1);
+                    entriesForStep.put(entry.measurement.measure, calculatedEntry);
+                } else {
+                    calculatedEntry = new CalculatedEntry(calculatedEntry.total, calculatedEntry.count, calculatedEntry.errors + 1);
+                    entriesForStep.put(entry.measurement.measure, calculatedEntry);
+                }
             }
             else {
-                final List<Double> values = collectedData.measurements.computeIfAbsent(entry.measurement, k -> new ArrayList<>());
-                values.add(entry.value);
+                final Map<Measure, CalculatedEntry> entriesForStep = calculatedData.entries.computeIfAbsent(entry.measurement.step, k -> new HashMap<>());
+                CalculatedEntry calculatedEntry = entriesForStep.get(entry.measurement.measure);
+                if (calculatedEntry == null) {
+                    calculatedEntry = new CalculatedEntry(entry.value, 1, 0);
+                    entriesForStep.put(entry.measurement.measure, calculatedEntry);
+                } else {
+                    calculatedEntry = new CalculatedEntry(calculatedEntry.total + entry.value, calculatedEntry.count + 1, 0);
+                    entriesForStep.put(entry.measurement.measure, calculatedEntry);
+                }
             }
-        }
-
-        final CalculatedData calculatedData = new CalculatedData();
-        for (final Measurement measurement : collectedData.measurements.keySet()) {
-            final List<Double> maybeValues = collectedData.measurements.get(measurement);
-            final double average = maybeValues == null ? 0 : average(maybeValues);
-            final Integer maybeErrors = collectedData.errors.get(measurement);
-            final int errors = maybeErrors == null ? 0 : maybeErrors;
-            final CalculatedEntry entry = new CalculatedEntry(average, errors);
-            addEntry(measurement, entry, calculatedData.entries);
-        }
-
-        for (final Measurement measurement : collectedData.errors.keySet()) {
-            final List<Double> maybeValues = collectedData.measurements.get(measurement);
-            final double average = maybeValues == null ? 0 : average(maybeValues);
-            final Integer maybeErrors = collectedData.errors.get(measurement);
-            final int errors = maybeErrors == null ? 0 : maybeErrors;
-            final CalculatedEntry entry = new CalculatedEntry(average, errors);
-            addEntry(measurement, entry, calculatedData.entries);
-
-            final Integer errorsBefore = calculatedData.totalErrorsByMeasure.computeIfAbsent(measurement.measure, k -> 0);
-            calculatedData.totalErrorsByMeasure.put(measurement.measure, errorsBefore + entry.errors);
         }
 
         return calculatedData;
-    }
-
-    private void addEntry(
-            final Measurement measurement,
-            final CalculatedEntry entry,
-            final Map<Step, Map<Measure, CalculatedEntry>> target) {
-        final Map<Measure, CalculatedEntry> entriesByMeasure =
-                target.computeIfAbsent(measurement.step, k -> new HashMap<>());
-        entriesByMeasure.put(measurement.measure, entry);
-    }
-
-    private double average(final List<Double> values) {
-        return sum(values) / values.size();
-    }
-
-    private double sum(final Iterable<Double> values) {
-        double total = 0;
-        for (final double value : values)
-            total += value;
-        return total;
     }
 }
