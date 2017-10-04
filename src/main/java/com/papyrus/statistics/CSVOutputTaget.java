@@ -9,16 +9,17 @@ import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.List;
 
-class CSVOutput {
+class CSVOutputTaget implements OutputTarget {
     private final static CSVFormat EXCEL_FORMAT = CSVFormat.EXCEL.withDelimiter(';');
 
     private final CSVPrinter printer;
 
-    CSVOutput(final OutputStream stream) throws IOException {
+    CSVOutputTaget(final OutputStream stream) throws IOException {
         printer = new CSVPrinter(new OutputStreamWriter(stream), EXCEL_FORMAT);
     }
 
-    void writeHeaders(Measure... measures) throws IOException {
+    @Override
+    public void writeHeaders(Measure... measures) throws IOException {
         final List<String> values = new ArrayList<>();
         values.add("Process step");
         for (final Measure measure : measures) {
@@ -28,7 +29,8 @@ class CSVOutput {
         printer.printRecord(values);
     }
 
-    void write(Step step, CalculatedEntry... entries) throws IOException {
+    @Override
+    public void write(Step step, CalculatedEntry... entries) throws IOException {
         final List<String> values = new ArrayList<>();
         values.add(step.name);
         for (final CalculatedEntry entry : entries) {
@@ -38,7 +40,8 @@ class CSVOutput {
         printer.printRecord(values);
     }
 
-    void close() throws IOException {
+    @Override
+    public void close() throws IOException {
         printer.flush();
         printer.close();
     }
