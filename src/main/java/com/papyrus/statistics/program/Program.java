@@ -12,8 +12,6 @@ import java.io.*;
 
 public class Program {
     public static void main(String[] args) throws IOException {
-        System.out.println("program running");
-
         final InputStream inputStream = new FileInputStream(args[0]);
         final InputSource source = new CSVInputSource(inputStream);
         final Collector collector = new Collector(source);
